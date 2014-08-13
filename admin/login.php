@@ -31,7 +31,7 @@ if($result = mysql_fetch_array($check_query)){
     //登录成功
     $_SESSION['user_name'] = $username;
     $_SESSION['user_id'] = $result['user_id'];
-    setcookie("user_name", $username, time()+3600);
+    setcookie("admin_name", $username, time()+3600);
     session_write_close();
     header("location: index.php ");
     //exit(0);
