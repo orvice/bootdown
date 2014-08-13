@@ -29,10 +29,10 @@ $pwd      = md5($_POST['password']); //md5加密
 $check_query = mysql_query("select admin_id from bd_admin where admin_username='$username' and admin_pwd='$pwd' limit 1");
 if($result = mysql_fetch_array($check_query)){
     //登录成功
-    $_SESSION['user_name'] = $username;
-    $_SESSION['user_id'] = $result['user_id'];
+    //$_SESSION['user_name'] = $username;
+    //$_SESSION['user_id'] = $result['user_id'];
     setcookie("admin_name", $username, time()+3600);
-    session_write_close();
+    //session_write_close();
     header("location: index.php ");
     //exit(0);
     //echo $username,' Welcome! Enter to <a href="admin.php">Admin Panel</a><br />';
