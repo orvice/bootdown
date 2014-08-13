@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2014-07-31 10:28:55
--- 服务器版本： 5.5.34
+-- Generation Time: Aug 13, 2014 at 09:16 AM
+-- Server version: 5.5.34
 -- PHP Version: 5.5.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 表的结构 `bd_admin`
+-- Table structure for table `bd_admin`
 --
 
 CREATE TABLE IF NOT EXISTS `bd_admin` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `bd_admin` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- 转存表中的数据 `bd_admin`
+-- Dumping data for table `bd_admin`
 --
 
 INSERT INTO `bd_admin` (`admin_id`, `admin_username`, `admin_pwd`, `admin_email`) VALUES
