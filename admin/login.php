@@ -76,7 +76,7 @@ else {
     </form>
 </div><!-- /.container -->
 
-<?php include_once '../lib/footer.php';?>
+<?php include_once '../lib/footer.inc.php';?>
 </body>
 </html>
 
