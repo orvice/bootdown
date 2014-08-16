@@ -38,19 +38,28 @@ if(!empty($_POST)){
     <div class="page-header">
         <h1>注册</h1>
     </div>
+
     <form class="form-signin" role="form" action="register.php" method="post">
 
         <div class="form-group">
             <label>用户名</label>
-            <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
+            <input type="username"  name="username" class="form-control" placeholder="用户名" required autofocus>
         </div>
 
         <div class="form-group">
             <label>密码</label>
-            <input type="password"  name="password" class="form-control" placeholder="Password" required>
+            <input type="password"  name="password" class="form-control" placeholder="密码" required>
         </div>
 
+        <div class="form-group">
+            <label>重复密码</label>
+            <input type="password"  name="password" class="form-control" placeholder="重复密码" required>
+        </div>
 
+        <div class="form-group">
+            <label>邮箱</label>
+            <input type="email"  name="email" class="form-control" placeholder="邮箱" required>
+        </div>
 
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">提交注册</button>
