@@ -17,14 +17,14 @@
                 if(!empty($_COOKIE[user_name])) {    ?>
                 <li><a href="#">用户：<?php echo $_COOKIE[user_name];?> </a></li>
                 <li><a href="#">设置</a></li>
-                <li><a href="logout.php">退出</a></li>
+                <li><a href="logout.php?action=logout">退出</a></li>
                 <?php } ?>
 
 
                 <?php
                 //未登录显示登录注册
                 if(empty($_COOKIE[user_name])) {    ?>
-                <li><a href="reg.php">注册</a></li>
+                <li><a href="register.php">注册</a></li>
                 <li><a href="login.php">登录</a></li>
                 <?php } ?>
 
