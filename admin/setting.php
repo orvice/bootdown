@@ -15,7 +15,7 @@
             <label>社交评论代码</label>
             <textarea class="form-control" rows="3"></textarea>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">更新</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="update">更新</button>
     </form>
 
 

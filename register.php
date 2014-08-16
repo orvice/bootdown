@@ -31,7 +31,7 @@ if(!empty($_POST)){
 <?php include_once 'lib/nav.php'; ?>
 
 <!-- Custom styles for singin -->
-<link href="css/signin.css" rel="stylesheet">
+<link href="css/register.css" rel="stylesheet">
 
 <!-- Begin page content -->
 <div class="container">
@@ -39,11 +39,20 @@ if(!empty($_POST)){
         <h1>注册</h1>
     </div>
     <form class="form-signin" role="form" action="register.php" method="post">
-        <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
-        <input type="password"  name="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
+
+        <div class="form-group">
+            <label>用户名</label>
+            <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label>密码</label>
+            <input type="password"  name="password" class="form-control" placeholder="Password" required>
+        </div>
+
+
+
+
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">提交注册</button>
     </form>
 </div><!-- /.container -->
