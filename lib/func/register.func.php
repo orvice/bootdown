@@ -1,0 +1,2 @@
+<?php
+//Register Func

@@ -14,6 +14,7 @@ if(!empty($_POST)){
 //获取_POST并赋值
     $username = $_POST['username'];
     $pwd      = md5($_POST['password']); //md5加密
+    $email    = $_POST['email'];
 
 
 }
