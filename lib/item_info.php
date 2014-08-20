@@ -16,7 +16,7 @@ $rs       = mysql_fetch_array($query);
             <p>详情:</br><?php echo $rs['item_text'];?></p>
 
             <div id="social_comment" >
-               <?php include_once 'lib/social_comment.php'; ?>
+               <?php include_once 'lib/comment.php'; ?>
             </div>
 
         </div>
