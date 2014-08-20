@@ -67,11 +67,18 @@ if(!empty($_POST)){
         <h1>登录</h1>
     </div>
     <form class="form-signin" role="form" action="login.php" method="post">
-        <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
-        <input type="password"  name="password" class="form-control" placeholder="Password" required>
+        <div class="form-group">
+          用户:<input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
+        </div>
+
+        <div class="form-group">
+        密码:<input type="password"  name="password" class="form-control" placeholder="Password" required>
+        </div>
+
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
         </label>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
     </form>
 </div><!-- /.container -->
