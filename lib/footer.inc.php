@@ -21,3 +21,5 @@
 <script src="js/flatui-radio.js"></script>
 <script src="js/jquery.tagsinput.js"></script>
 <script src="js/jquery.placeholder.js"></script>
+<script src="js/custom_checkbox_and_radio.js"></script>
+

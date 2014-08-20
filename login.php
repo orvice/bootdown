@@ -75,11 +75,11 @@ if(!empty($_POST)){
         密码:<input type="password"  name="password" class="form-control" placeholder="Password" required>
         </div>
 
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
+        <label  class="checkbox" for="checkbox1">
+            <input type="checkbox" value="remember-me" id="checkbox1"  data-toggle="checkbox"> 记住登录
         </label>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">登录</button>
     </form>
 </div><!-- /.container -->
 
