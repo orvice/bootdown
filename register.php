@@ -29,10 +29,7 @@ if(!empty($_POST)){
     <link href="css/register.css" rel="stylesheet">
 </head>
 <body>
-
 <?php include_once 'lib/nav.php'; ?>
-
-
 
 <!-- Begin page content -->
 <div class="container">
