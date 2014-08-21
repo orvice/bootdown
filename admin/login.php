@@ -53,13 +53,12 @@ else {
     <meta charset="utf-8">
     <title>Login</title>
     <?php include_once '../lib/header_admin.inc.php';?>
+    <!-- Custom styles for singin -->
+    <link href="../css/signin.css" rel="stylesheet">
 </head>
 <body>
 
 <?php include_once '../lib/nav.php'; ?>
-
-<!-- Custom styles for singin -->
-<link href="../css/signin.css" rel="stylesheet">
 
 <!-- Begin page content -->
 <div class="container">
@@ -83,7 +82,7 @@ else {
     </form>
 </div><!-- /.container -->
 
-<?php include_once '../lib/footer.inc.php';?>
+<?php include_once '../lib/footer_admin.inc.php';?>
 </body>
 </html>
 
