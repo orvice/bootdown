@@ -52,13 +52,14 @@ if(!empty($_POST)){
 <head>
     <title>登录</title>
     <?php include_once 'lib/header.inc.php';?>
+    <!-- Custom styles for singin -->
+    <link href="css/signin.css" rel="stylesheet">
 </head>
 <body>
 
 <?php include_once 'lib/nav.php'; ?>
 
-<!-- Custom styles for singin -->
-<link href="css/signin.css" rel="stylesheet">
+
 
 <!-- Begin page content -->
 <div class="container">
