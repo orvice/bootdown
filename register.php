@@ -23,7 +23,6 @@ if(!empty($_POST)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <title>注册</title>
     <?php include_once 'lib/header.inc.php';?>
 </head>
