@@ -50,16 +50,13 @@ if(!empty($_POST)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <title>登录</title>
     <?php include_once 'lib/header.inc.php';?>
+    <!-- Custom styles for singin -->
+    <link href="css/signin.css" rel="stylesheet">
 </head>
 <body>
-
 <?php include_once 'lib/nav.php'; ?>
-
-<!-- Custom styles for singin -->
-<link href="css/signin.css" rel="stylesheet">
 
 <!-- Begin page content -->
 <div class="container">
@@ -75,11 +72,11 @@ if(!empty($_POST)){
         密码:<input type="password"  name="password" class="form-control" placeholder="Password" required>
         </div>
 
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
+        <label  class="checkbox" for="checkbox1">
+            <input type="checkbox" value="remember-me" id="checkbox1"  data-toggle="checkbox"> 记住登录
         </label>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">登录</button>
     </form>
 </div><!-- /.container -->
 

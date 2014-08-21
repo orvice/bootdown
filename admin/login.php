@@ -53,30 +53,36 @@ else {
     <meta charset="utf-8">
     <title>Login</title>
     <?php include_once '../lib/header_admin.inc.php';?>
+    <!-- Custom styles for singin -->
+    <link href="../css/signin.css" rel="stylesheet">
 </head>
 <body>
 
 <?php include_once '../lib/nav.php'; ?>
 
-<!-- Custom styles for singin -->
-<link href="../css/signin.css" rel="stylesheet">
-
 <!-- Begin page content -->
 <div class="container">
     <div class="page-header">
-        <h1>Please sign in</h1>
+        <h1>登录</h1>
     </div>
     <form class="form-signin" role="form" action="login.php" method="post">
+        <div class="form-group">
         <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
+        </div>
+
+        <div class="form-group">
         <input type="password"  name="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
+        </div>
+
+        <label  class="checkbox" for="checkbox1">
+            <input type="checkbox" value="remember-me" id="checkbox1"  data-toggle="checkbox"> 记住登录
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">登录</button>
     </form>
 </div><!-- /.container -->
 
-<?php include_once '../lib/footer.inc.php';?>
+<?php include_once '../lib/footer_admin.inc.php';?>
 </body>
 </html>
 

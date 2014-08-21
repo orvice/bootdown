@@ -18,6 +18,7 @@
 <script src="../js/jquery.tagsinput.js"></script>
 <script src="../js/jquery.placeholder.js"></script>
 <script src="../js/bootstrap-select.js"></script>
+<script src="../js/custom_checkbox_and_radio.js"></script>
 
 <script type="text/javascript">
     $(window).on('load', function () {

@@ -23,16 +23,13 @@ if(!empty($_POST)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <title>注册</title>
     <?php include_once 'lib/header.inc.php';?>
+    <!-- Custom styles for register -->
+    <link href="css/register.css" rel="stylesheet">
 </head>
 <body>
-
 <?php include_once 'lib/nav.php'; ?>
-
-<!-- Custom styles for singin -->
-<link href="css/register.css" rel="stylesheet">
 
 <!-- Begin page content -->
 <div class="container">
