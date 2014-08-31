@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li <?php if(empty($_GET)){ echo 'class="active"';}?> ><a href="index.php">后台首页</a></li>
-                <li <?php if ($_GET['action'] == "category"){echo ' class="active" ';}?>><a href="?action=category">分类管理</a> </li>
-                <li <?php if ($_GET['action'] == "item"){echo ' class="active" ';}?>><a href="?action=item">下载管理</a></li>
-                <li <?php if ($_GET['action'] == "add"){echo ' class="active" ';}?>><a href="?action=add">添加</a></li>
-                <li <?php if ($_GET['action'] == "setting"){echo ' class="active" ';}?>><a href="?action=setting">系统设置</a></li>
+                <li <?php if ($_GET['action'] == "category"){echo ' class="active" ';}?>><a href="index.php?action=category">分类管理</a> </li>
+                <li <?php if ($_GET['action'] == "item"){echo ' class="active" ';}?>><a href="index.php?action=item">下载管理</a></li>
+                <li <?php if ($_GET['action'] == "add"){echo ' class="active" ';}?>><a href="index.php?action=add">添加</a></li>
+                <li <?php if ($_GET['action'] == "setting"){echo ' class="active" ';}?>><a href="index.php?action=setting">系统设置</a></li>
                 <li><a href="../index.php">前台首页</a> </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户: <?php echo $_COOKIE[admin_name];?> <span class="caret"></span></a>
