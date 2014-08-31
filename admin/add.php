@@ -2,11 +2,11 @@
     <div class="page-header">
         <h1>添加下载</h1>
     </div>
-    <form class="form-set" role="form" action="add.php" method="post">
+    <form class="form-set" role="form" action="doadd.php?action=add" method="post">
 
         <div class="form-group">
             <label>标题</label>
-            <input class="form-control">
+            <input class="form-control" name="title" >
         </div>
 
         <div class="form-group">
@@ -23,18 +23,18 @@
 
         <div class="form-group">
             <label>下载链接</label>
-            <input class="form-control">
+            <input class="form-control" name="downlink" >
         </div>
 
         <div class="form-group">
             <label>大小</label>
-            <input class="form-control">
+            <input class="form-control" name="downsize" >
         </div>
 
 
         <div class="form-group">
             <label>详情</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" name="dowoinfo" rows="3"></textarea>
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">添加</button>
