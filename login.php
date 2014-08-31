@@ -61,7 +61,7 @@ if(!empty($_POST)){
         </div>
 
         <div class="form-group">
-        密码:<input type="password"  name="password" class="form-control" placeholder="Password" required>
+        密码:<input type="password"  name="password" class="form-control" placeholder="Password" >
         </div>
 
         <label  class="checkbox" for="checkbox1">
