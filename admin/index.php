@@ -21,6 +21,8 @@ else
     <meta charset="utf-8">
     <?php include_once '../lib/header_admin.inc.php';
           include_once '../lib/config.php';
+          include_once 'func/global.func.php';
+
     ?>
     <title><?php echo $site_name ; ?>-后台管理</title>
 
