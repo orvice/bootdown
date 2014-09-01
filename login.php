@@ -1,44 +1,3 @@
-<?php
-/**
- *  Login pages
- */
-
-//Debug
-//echo('Start Login...</br>');
-
-
-//引用数据库连接文件
-require_once 'lib/config.php';
-
-
-if(!empty($_POST)){
-
-//获取_POST并赋值
-    $username = $_POST['username'];
-    $pwd      = md5($_POST['password']); //md5加密
-
-//检测用户名及密码是否正确
-    $check_query = mysql_query("select uid from bd_user where user_name='$username' and user_pwd='$pwd' limit 1");
-    if($result = mysql_fetch_array($check_query)){
-        //登录成功
-        //$_SESSION['user_name'] = $username;
-        //$_SESSION['user_id'] = $result['user_id'];
-        setcookie("user_name", $username, time()+3600);
-        //session_write_close();
-        header("location: index.php ");
-        //exit(0);
-        //echo $username,' Welcome! Enter to <a href="admin.php">Admin Panel</a><br />';
-        //echo 'click <a href="logout.php?action=logout">Logout</a> !<br />';
-        //echo $_SESSION['user_name'];
-        exit;
-    }
-    else {
-        exit('Failed <a href="javascript:history.back(-1);">Back</a> and try again. ');
-    }
-
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +14,7 @@ if(!empty($_POST)){
     <div class="page-header">
         <h1>登录</h1>
     </div>
-    <form class="form-signin" role="form" name="login" action="login.php" method="post" onsubmit="return logincheck()" >
+    <form class="form-signin" role="form" name="login" action="dologin.php" method="post" onsubmit="return logincheck()" >
         <div class="form-group">
           用户:<input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
         </div>
