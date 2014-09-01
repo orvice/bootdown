@@ -32,7 +32,7 @@ else
 <?php
 
         include_once 'doaddmain.php';
- ?>
+?>
 
 <?php include_once '../lib/footer_admin.inc.php';?>
 
