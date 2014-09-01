@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="container">
-        <p class="text-muted">Copyright © <?php echo date(Y); ?> <a href="#"><?php  echo $site_name; ?></a> Power by <a href="#">BootDown</a> .</>
+        <p class="text-muted">Copyright © <?php echo date(Y); ?> <a href="#"><?php  echo $site_name; ?></a> Power by <a href="#">BootDown</a> <?php echo $version; ?> .</>
     </div>
 
     <div id="analytics-code" style="display:none">
