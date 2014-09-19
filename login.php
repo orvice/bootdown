@@ -37,13 +37,13 @@
     {
         if(document.login.username.value.length==0){
             alert("请输入用户名");
-            document.want.name.focus();
+            document.login.username.focus();
             return false;
         }
 
         if(document.login.password.value.length==0){
             alert("请输入密码!");
-            document.want.age.focus();
+            document.login.password.focus();
             return false;
         }
 
@@ -55,4 +55,3 @@
 <?php include_once 'lib/footer.inc.php';?>
 </body>
 </html>
-
