@@ -7,7 +7,7 @@
 <link href="../css/flat-ui.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
+<link href="../css/sticky-footer-navbar-admin.css" rel="stylesheet">
 <link href="../css/admin-panel.css" rel="stylesheet">
 <link href="../css/main.css" rel="stylesheet">
 
