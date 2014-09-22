@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <title>登录</title>
-    <?php include_once 'lib/header.inc.php';?>
+    <?php
+    //引用数据库连接文件
+    require_once 'lib/config.php';
+    include_once 'lib/header.inc.php';?>
     <!-- Custom styles for singin -->
     <link href="css/signin.css" rel="stylesheet">
 </head>
