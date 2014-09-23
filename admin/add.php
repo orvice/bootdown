@@ -34,7 +34,7 @@
 
         <div class="form-group">
             <label>详情</label>
-            <textarea class="form-control" name="dowoinfo" rows="3"></textarea>
+            <textarea class="form-control" name="downinfo" rows="3"></textarea>
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">添加</button>

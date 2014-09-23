@@ -8,6 +8,10 @@ define('DB_HOST','localhost');
 define('DB_USER','user');
 define('DB_PWD','pwd');
 define('DB_DBNAME','db');
+define('DB_CHARSET','utf8');
+
+//Define system Path
+define('BD_PATH','bootdown/');
 
 //站点名
 $site_name = "下载站";

@@ -31,7 +31,7 @@
             </ul>
 
             <form class="navbar-form navbar-right" method="get" action="search.php" name="search">
-                <input type="text" name="keyword" class="form-control" placeholder="搜索...">
+                <input type="text" name="keyword" class="form-control" value="<?php echo $keyword; ?>">
             </form>
 
         </div>
