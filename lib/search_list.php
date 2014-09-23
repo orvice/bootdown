@@ -1,13 +1,8 @@
+
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-
-
 <h2 class="sub-header">搜索</h2>
-<div>
-    <form class="navbar-form navbar-left" method="get" action="search.php" name="search">
-        <input type="text" name="keyword" class="form-control" placeholder="搜索...">
-    </form>
-</div>
+
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -22,14 +17,11 @@
         <tbody>
 
         <?php
-        if (empty($_GET)){
-            $item_sql_all = "SELECT * FROM `bd_item`";
-        }
-        if(!empty($_GET)){
-            $cate_id = $_GET[id];
-            $item_sql_all = "SELECT * FROM `bd_item` WHERE item_cate_id = '$cate_id' ";
-        }
-        $query = mysql_query($item_sql_all);
+
+            $search_sql = "SELECT * FROM `bd_item` WHERE `item_title` LIKE '$keyword' ";
+
+
+        $query = mysql_query($search_sql);
         //$rss=mysql_fetch_row($query);
         if(!$query){
              echo 'Not Found';
