@@ -3,6 +3,7 @@
  *  Admin Global Func
  */
 
+//登录检查函数
 function admincheck(){
     session_start();
     $sessionId = session_id();
@@ -20,6 +21,7 @@ function admincheck(){
     }
 }
 
+//统计item数量函数，返回数字
 function item_count(){
     $sql = "SELECT COUNT(item_id)  FROM `bd_item`";
     $row = mysql_fetch_array( mysql_query($sql) );
