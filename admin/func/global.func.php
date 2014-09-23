@@ -19,3 +19,9 @@ function admincheck(){
         $user_name = $_COOKIE['user_name'];
     }
 }
+
+function item_count(){
+    $sql = "SELECT COUNT(item_id)  FROM `bd_item`";
+    $row = mysql_fetch_array( mysql_query($sql) );
+    return $row[0];
+}
