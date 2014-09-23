@@ -30,8 +30,8 @@
 
             </ul>
 
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="搜索...">
+            <form class="navbar-form navbar-right" method="get" action="search.php" name="search">
+                <input type="text" name="keyword" class="form-control" placeholder="搜索...">
             </form>
 
         </div>
