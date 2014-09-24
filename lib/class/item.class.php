@@ -14,6 +14,7 @@ class item {
         $this->item_id = $id;
     }
 
+    //获取count
     function get_item_count(){
         $sql = "SELECT * FROM `bd_item` WHERE `item_id`= '$this->item_id'  ";
         $query = mysql_query($sql);
@@ -28,10 +29,11 @@ class item {
 
     }
 
+    //浏览数count ++
     function item_count_plus(){
         $count = $this->get_item_count();
-        $count+= $count;
-        $sql   = "UPDATE `bd_item` SET `item_count`='$count' WHERE `item_id`='$this->id'";
+        $count++;
+        $sql   = "UPDATE `bd_item` SET `item_count`='$count' WHERE `item_id`='$this->item_id'";
         $query = mysql_query($sql);
 
     }
