@@ -1,4 +1,10 @@
 <?php
+//引入配置文件
+include_once '../lib/config.php';
+include_once 'func/global.func.php';
+include_once '../lib/func/comm.func.php'; //获取全局公共函数
+include_once 'func/systems.func.php';
+
 session_start();
 $sessionId = session_id();
 
@@ -19,12 +25,7 @@ else
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?php include_once '../lib/header_admin.inc.php';
-          include_once '../lib/config.php';
-          include_once 'func/global.func.php';
-          include_once '../lib/func/comm.func.php'; //获取全局公共函数
-
-    ?>
+    <?php include_once '../lib/header_admin.inc.php'; ?>
     <title><?php echo $site_name ; ?>-后台管理</title>
 
 </head>
