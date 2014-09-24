@@ -6,7 +6,7 @@ BootDown is a php dowaload manage system base on Bootstrap and flat UI.
 ### To-Do ###
 
 * 搜索
-* 限制注册会员可以洗澡
+* 限制注册会员可以下载
 * 修改网站信息功能
 * 完成后台分类管理
 * 下载管理

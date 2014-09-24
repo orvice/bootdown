@@ -3,6 +3,7 @@
  *  Admin Global Func
  */
 
+//登录检查函数
 function admincheck(){
     session_start();
     $sessionId = session_id();
@@ -19,3 +20,4 @@ function admincheck(){
         $user_name = $_COOKIE['user_name'];
     }
 }
+
