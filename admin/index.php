@@ -22,6 +22,7 @@ else
     <?php include_once '../lib/header_admin.inc.php';
           include_once '../lib/config.php';
           include_once 'func/global.func.php';
+          include_once '../lib/func/comm.func.php'; //获取全局公共函数
 
     ?>
     <title><?php echo $site_name ; ?>-后台管理</title>

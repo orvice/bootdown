@@ -21,9 +21,3 @@ function admincheck(){
     }
 }
 
-//统计item数量函数，返回数字
-function item_count(){
-    $sql = "SELECT COUNT(item_id)  FROM `bd_item`";
-    $row = mysql_fetch_array( mysql_query($sql) );
-    return $row[0];
-}
