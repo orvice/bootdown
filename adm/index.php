@@ -25,7 +25,7 @@ else
 <html>
 <head>
 
-    <title>AdminLTE | Dashboard</title>
+    <title>管理后台</title>
     <?php include_once 'lib/header.inc.php'; ?>
 
 </head>
