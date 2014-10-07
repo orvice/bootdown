@@ -207,14 +207,14 @@
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="glyphicon glyphicon-user"></i>
-        <span><?php echo $_COOKIE[user_name];?> <i class="caret"></i></span>
+        <span><?php echo $_COOKIE[admin_name];?> <i class="caret"></i></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
             <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
             <p>
-                <?php echo $_COOKIE[user_name];?>
+                <?php echo $_COOKIE[admin_name];?>
                 <small>Member since Nov. 2012</small>
             </p>
         </li>

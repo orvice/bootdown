@@ -1,16 +1,32 @@
 <?php
-if(empty($_COOKIE[user_name])){
-    header("Location:../login.php");
+//引入配置文件
+include_once '../lib/config.php';
+include_once 'func/global.func.php';
+include_once '../lib/func/comm.func.php'; //获取全局公共函数
+include_once 'func/systems.func.php';
+
+session_start();
+$sessionId = session_id();
+
+//检测是否登录，若没登录则转向登录界面
+
+if(!isset($_COOKIE['admin_name'])){
+    header("Location:login.php");
+    exit();
+
+}
+else
+{
+    $admin_name = $_COOKIE['admin_name'];
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 
     <title>AdminLTE | Dashboard</title>
-    <?php
-    require_once '../lib/config.php';
-    include_once 'lib/header.inc.php'; ?>
+    <?php include_once 'lib/header.inc.php'; ?>
 
 </head>
 <body class="skin-blue">
@@ -46,10 +62,10 @@ if(empty($_COOKIE[user_name])){
         <div class="small-box bg-aqua">
             <div class="inner">
                 <h3>
-                    150
+                    <?php  echo item_count(); ?>
                 </h3>
                 <p>
-                    New Orders
+                    下载
                 </p>
             </div>
             <div class="icon">
@@ -84,10 +100,10 @@ if(empty($_COOKIE[user_name])){
         <div class="small-box bg-yellow">
             <div class="inner">
                 <h3>
-                    44
+                    <?php  echo user_count(); ?>
                 </h3>
                 <p>
-                    User Registrations
+                    用户
                 </p>
             </div>
             <div class="icon">
