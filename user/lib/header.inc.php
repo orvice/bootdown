@@ -1,9 +1,9 @@
 <meta charset="UTF-8">
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!-- Ionicons -->
-<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/ionicons.min.css" rel="stylesheet" type="text/css" />
 <!-- Morris chart -->
 <link href="../css/morris/morris.css" rel="stylesheet" type="text/css" />
 <!-- jvectormap -->
