@@ -14,6 +14,7 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
+
             <!-- search form -->
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
@@ -24,6 +25,7 @@
                 </div>
             </form>
             <!-- /.search form -->
+
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="active">
@@ -31,11 +33,19 @@
                         <i class="fa fa-dashboard"></i> <span>用户中心</span>
                     </a>
                 </li>
-                <li>
-                    <a href="pages/widgets.html">
-                        <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-th"></i> <span>下载管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
                     </a>
+
+                    <ul class="treeview-menu">
+                        <li><a href="down_mana.php"><i class="fa fa-angle-double-right"></i> 管理</a></li>
+                        <li><a href="down_add.php"><i class="fa fa-angle-double-right"></i> 添加</a></li>
+                    </ul>
                 </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-bar-chart-o"></i>
@@ -48,6 +58,7 @@
                         <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
                     </ul>
                 </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-laptop"></i>
