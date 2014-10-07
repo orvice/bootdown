@@ -17,6 +17,13 @@ function cate_item_count($cate_id){
     return $row[0];
 }
 
+//统计分类数量函数
+function cate_count(){
+    $sql = "SELECT COUNT(cate_id)  FROM `bd_cate`";
+    $row = mysql_fetch_array( mysql_query($sql) );
+    return $row[0];
+}
+
 //获取当前路径文件名
 function get_filename($url=0){
     if($url=0){
