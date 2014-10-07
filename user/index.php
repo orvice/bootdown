@@ -1,3 +1,8 @@
+<?php
+if(empty($_COOKIE[user_name])){
+    header("Location:../login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

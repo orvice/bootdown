@@ -1,8 +1,3 @@
-<?php
-if(empty($_COOKIE[user_name])){
-    header('Location:../index.php');
-}
-?>
 <!-- header logo: style can be found in header.less -->
 <header class="header">
 <a href="index.html" class="logo">
