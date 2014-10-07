@@ -16,3 +16,12 @@ function cate_item_count($cate_id){
     $row = mysql_fetch_array( mysql_query($sql) );
     return $row[0];
 }
+
+//获取当前路径文件名
+function get_filename($url=0){
+    if($url=0){
+        $url = $_SERVER['PHP_SELF'];
+    }
+    $filename = end(explode('/',$url));
+    return $filename;
+}
