@@ -43,12 +43,12 @@ else
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        用户中心
-        <small>Control panel</small>
+        管理中心
+        <small>Admin anel</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 管理后台</a></li>
+        <li class="active">管理中心</li>
     </ol>
 </section>
 
@@ -134,6 +134,8 @@ else
         </div>
     </div><!-- ./col -->
 </div><!-- /.row -->
+
+
 
 <!-- Main row -->
 <div class="row">
