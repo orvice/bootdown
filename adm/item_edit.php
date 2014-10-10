@@ -60,18 +60,18 @@ include_once 'lib/slidebar_left.inc.php';  ?>
         <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header">
-                <h3 class="box-title">Quick Example</h3>
+                <h3 class="box-title">编辑</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
             <form role="form">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <label for="exampleInputEmail1">标题</label>
+                        <input type="email" class="form-control" id="title"  >
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="exampleInputPassword1">大小</label>
+                        <input   class="form-control" id="size"  >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">File input</label>
@@ -103,7 +103,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
         <!-- general form elements disabled -->
         <div class="box box-warning">
             <div class="box-header">
-                <h3 class="box-title">General Elements</h3>
+                <h3 class="box-title">Tips</h3>
             </div><!-- /.box-header -->
             <div class="box-body">
                 <form role="form">
@@ -112,7 +112,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         <label>Text</label>
                         <input type="text" class="form-control" placeholder="Enter ..."/>
                     </div>
-                     
+
             </div><!-- /.box-body -->
         </div><!-- /.box -->
     </div><!--/.col (right) -->
