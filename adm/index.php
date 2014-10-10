@@ -47,7 +47,7 @@ else
         <small>Admin anel</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 管理后台</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
         <li class="active">管理中心</li>
     </ol>
 </section>
