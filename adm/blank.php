@@ -33,30 +33,30 @@ else
 
 
 <?php include_once 'lib/nav.inc.php';
-      include_once 'lib/slidebar_left.inc.php';  ?>
+include_once 'lib/slidebar_left.inc.php';  ?>
 
 
 
 
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        管理中心
-        <small>Admin anel</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-        <li class="active">下载管理</li>
-    </ol>
-</section>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            管理中心
+            <small>Admin Panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> 后台</a></li>
+            <li class="active">下载管理</li>
+        </ol>
+    </section>
 
-<!-- Main content -->
-<section class="content">
+    <!-- Main content -->
+    <section class="content">
 
 
-</section><!-- /.content -->
+    </section><!-- /.content -->
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
