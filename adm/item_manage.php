@@ -43,8 +43,8 @@ else
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        管理中心
-        <small>Admin Panel</small>
+        下载管理
+        <small>Items Manage</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> 后台</a></li>
@@ -54,12 +54,15 @@ else
 
 <!-- Main content -->
 <section class="content">
-
+    <?php
+    $item_sql_all = "SELECT * FROM `bd_item`";
+    $query = mysql_query($item_sql_all);
+    ?>
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Responsive Hover Table</h3>
+                    <h3 class="box-title">下载管理</h3>
                     <div class="box-tools">
                         <div class="input-group">
                             <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
@@ -73,39 +76,24 @@ else
                     <table class="table table-hover">
                         <tr>
                             <th>ID</th>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Reason</th>
+                            <th>文件</th>
+                            <th>日期</th>
+                            <th>大小</th>
+                            <th>操作</th>
                         </tr>
+                        <?php
+                        while($rs=mysql_fetch_array($query)){ ?>
                         <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-success">Approved</span></td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                            <td>#<?php echo $rs['item_id']; ?></td>
+                            <td><?php echo $rs['item_title']; ?></td>
+                            <td><?php echo $rs['item_date']; ?></td>
+                            <td><?php echo $rs['item_size']; ?></td>
+                            <td>
+                                <a class="btn btn-default btn-sm" href="item_edit.php?id=<?php echo $rs['item_id']; ?>">编辑</a>
+                                <a class="btn btn-danger btn-sm" href="item_del.php?id=<?php echo $rs['item_id']; ?>">删除</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>219</td>
-                            <td>Jane Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-warning">Pending</span></td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                        </tr>
-                        <tr>
-                            <td>657</td>
-                            <td>Bob Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-primary">Approved</span></td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                        </tr>
-                        <tr>
-                            <td>175</td>
-                            <td>Mike Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-danger">Denied</span></td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                        </tr>
+                        <?php } ?>
                     </table>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
