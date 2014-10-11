@@ -51,7 +51,12 @@ include_once 'lib/slidebar_left.inc.php';  ?>
             <li class="active">下载管理</li>
         </ol>
     </section>
-
+    <?php
+    $item_id = $_GET['id'];
+    $sql     = get_item_sql($item_id);
+    $query    = mysql_query($sql);
+    $rs       = mysql_fetch_array($query);
+    ?>
     <!-- Main content -->
     <section class="content">
     <div class="row">
@@ -68,7 +73,54 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                     <div class="form-group">
                         <label for="item_title">标题</label>
-                        <input type="email" class="form-control" id="item_title"  >
+                        <input type="email" class="form-control" id="item_title" value="<?php echo $rs['item_title'];?>" >
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="item_size">大小</label>
+                        <input   class="form-control" id="item_size"  value="<?php echo $rs['item_size'];?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item_links">下载链接</label>
+                        <input   class="form-control" id="item_link" value="<?php echo $rs['item_url'];?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item_info">详情</label>
+                        <textarea class="form-control" name="item_info" rows="8"  ><?php echo $rs['item_text'];?>
+                        </textarea>
+                    </div>
+
+
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+
+        </div><!-- /.box -->
+
+
+
+
+
+
+
+    </div><!--/.col (left) -->
+    <!-- right column -->
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header">
+                    <i class="fa fa-bullhorn"></i>
+                    <h3 class="box-title">信息</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="callout callout-danger">
+
+                        <p>  当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
                     </div>
 
                     <div class="form-group">
@@ -83,55 +135,20 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="item_size">大小</label>
-                        <input   class="form-control" id="item_size"  >
+                    <div class="callout callout-info">
+                        <h4>注意!</h4>
+                        <p>文件大小请填写大小.</p>
+                        <p>下载链接请填写http.</p>
+                    </div>
+                    <div class="callout callout-warning">
+                        <h4>其他</h4>
+                        <p>Other.</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="item_links">下载链接</label>
-                        <input   class="form-control" id="item_link"  >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="item_info">详情</label>
-                        <textarea class="form-control" name="item_info" rows="3"></textarea>
-                    </div>
-
-
+                    </form>
                 </div><!-- /.box-body -->
-
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">提交</button>
-                </div>
-            </form>
-        </div><!-- /.box -->
-
-
-
-
-
-
-
-    </div><!--/.col (left) -->
-    <!-- right column -->
-    <div class="col-md-6">
-        <!-- general form elements disabled -->
-        <div class="box box-warning">
-            <div class="box-header">
-                <h3 class="box-title">Tips</h3>
-            </div><!-- /.box-header -->
-            <div class="box-body">
-                <form role="form">
-                    <!-- text input -->
-                    <div class="form-group">
-                        <label>Text</label>
-                        <input type="text" class="form-control" placeholder="Enter ..."/>
-                    </div>
-
-            </div><!-- /.box-body -->
-        </div><!-- /.box -->
-    </div><!--/.col (right) -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
     </div>   <!-- /.row -->
 
     </section><!-- /.content -->
