@@ -63,26 +63,42 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <h3 class="box-title">编辑</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="post" action="item_edit.php">
                 <div class="box-body">
+
                     <div class="form-group">
-                        <label for="exampleInputEmail1">标题</label>
-                        <input type="email" class="form-control" id="title"  >
+                        <label for="item_title">标题</label>
+                        <input type="email" class="form-control" id="item_title"  >
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleInputPassword1">大小</label>
-                        <input   class="form-control" id="size"  >
+                        <label>分类</label> </br>
+                        <select name="cate" class="selectpicker" data-style="btn-info" >
+                            <?php
+                            $cate_sql =" SELECT * FROM `bd_cate` ";
+                            $query = mysql_query($cate_sql);
+                            while ($rs = mysql_fetch_array($query)){
+                                ?>
+                                <option value="<?php echo $rs['cate_id']; ?>"><?php echo $rs['cate_name']; ?></option>   <?php } ?>
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Example block-level help text here.</p>
+                        <label for="item_size">大小</label>
+                        <input   class="form-control" id="item_size"  >
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Check me out
-                        </label>
+
+                    <div class="form-group">
+                        <label for="item_links">下载链接</label>
+                        <input   class="form-control" id="item_link"  >
                     </div>
+
+                    <div class="form-group">
+                        <label for="item_info">详情</label>
+                        <textarea class="form-control" name="item_info" rows="3"></textarea>
+                    </div>
+
+
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
