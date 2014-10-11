@@ -130,7 +130,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                     <div class="callout callout-info">
                         <h4>注意!</h4>
-                        <p>文件大小请填写大小.</p>
+                        <p>文件大小请填写单位(MB/GB/...).</p>
                         <p>下载链接请填写http.</p>
                     </div>
                     <div class="callout callout-warning">
