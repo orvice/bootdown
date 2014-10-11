@@ -73,7 +73,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                     <div class="form-group">
                         <label>分类</label> </br>
-                        <select name="cate" class="selectpicker" data-style="btn-info" >
+                        <select name="cate"     >
                             <?php
                             $cate_sql =" SELECT * FROM `bd_cate` ";
                             $query = mysql_query($cate_sql);
@@ -102,7 +102,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">提交</button>
                 </div>
             </form>
         </div><!-- /.box -->
