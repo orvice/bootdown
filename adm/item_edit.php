@@ -43,8 +43,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            管理中心
-            <small>Admin Panel</small>
+            修改
+            <small>Edit</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-dashboard"></i> 后台</a></li>
@@ -73,25 +73,22 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                     <div class="form-group">
                         <label for="item_title">标题</label>
-                        <input type="email" class="form-control" id="item_title" value="<?php echo $rs['item_title'];?>" >
+                        <input  class="form-control" name="item_title" value="<?php echo $rs['item_title'];?>" >
                     </div>
-
-
 
                     <div class="form-group">
                         <label for="item_size">大小</label>
-                        <input   class="form-control" id="item_size"  value="<?php echo $rs['item_size'];?>" >
+                        <input   class="form-control" name="item_size"  value="<?php echo $rs['item_size'];?>" >
                     </div>
 
                     <div class="form-group">
                         <label for="item_links">下载链接</label>
-                        <input   class="form-control" id="item_link" value="<?php echo $rs['item_url'];?>" >
+                        <input   class="form-control" name="item_link" value="<?php echo $rs['item_url'];?>" >
                     </div>
 
                     <div class="form-group">
                         <label for="item_info">详情</label>
-                        <textarea class="form-control" name="item_info" rows="8"  ><?php echo $rs['item_text'];?>
-                        </textarea>
+                        <textarea class="form-control" name="item_info" rows="8"  ><?php echo $rs['item_text'];?></textarea>
                     </div>
 
 
@@ -102,12 +99,6 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 </div>
 
         </div><!-- /.box -->
-
-
-
-
-
-
 
     </div><!--/.col (left) -->
     <!-- right column -->
