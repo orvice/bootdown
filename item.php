@@ -1,5 +1,6 @@
 <?php
 include_once 'lib/config.php';
+include_once 'lib/func/comm.func.php';
 
 
 //保存_GET值

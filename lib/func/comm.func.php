@@ -32,3 +32,9 @@ function get_filename($url=0){
     $filename = end(explode('/',$url));
     return $filename;
 }
+
+//根据id获取查询sql
+function get_item_sql($id){
+     $item_sql = "SELECT * FROM `bd_item`  WHERE item_id = $id";
+     return $item_sql;
+}
