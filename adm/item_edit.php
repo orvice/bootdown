@@ -120,7 +120,9 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <div class="box-body">
                     <div class="callout callout-danger">
 
-                        <p>  当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
+                        <p>当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
+                        <p>浏览数为:<code><?php echo $rs['item_count']; ?></code></p>
+                        <p>最后修改日期为：<code><?php  echo $rs['item_date'];?> </code></p>
                     </div>
 
                     <div class="form-group">
