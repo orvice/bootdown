@@ -42,7 +42,7 @@
 
                     <ul class="treeview-menu">
                         <li><a href="item_manage.php"><i class="fa fa-angle-double-right"></i> 管理</a></li>
-                        <li><a href="itme_add.php"><i class="fa fa-angle-double-right"></i> 添加</a></li>
+                        <li><a href="item_add.php"><i class="fa fa-angle-double-right"></i> 添加</a></li>
                     </ul>
                 </li>
 
