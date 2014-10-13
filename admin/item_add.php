@@ -43,8 +43,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            修改
-            <small>Edit</small>
+            添加
+            <small>Add item</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-dashboard"></i> 后台</a></li>
@@ -68,7 +68,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <h3 class="box-title">编辑</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="item_edit.php">
+            <form role="form" method="post" action="item_do.php">
                 <div class="box-body">
 
                     <div class="form-group">
@@ -111,9 +111,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <div class="box-body">
                     <div class="callout callout-danger">
 
-                        <p>当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
-                        <p>浏览数为:<code><?php echo $rs['item_count']; ?></code></p>
-                        <p>最后修改日期为：<code><?php  echo $rs['item_date'];?> </code></p>
+                        <p>请选择分类</p>
+
                     </div>
 
                     <div class="form-group">
@@ -133,10 +132,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         <p>文件大小请填写单位(MB/GB/...).</p>
                         <p>下载链接请填写http.</p>
                     </div>
-                    <div class="callout callout-warning">
-                        <h4>其他</h4>
-                        <p>Other.</p>
-                    </div>
+
 
                     </form>
                 </div><!-- /.box-body -->
