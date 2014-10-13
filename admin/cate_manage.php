@@ -63,7 +63,7 @@ else
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">分类管理</h3>
-                     
+
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
@@ -82,8 +82,8 @@ else
                             <td> <?php echo  cate_item_count($rs['cate_id']); ?></td>
                             <td> <?php echo $rs['cate_order']; ?></td>
                             <td>
-                                <a class="btn btn-default btn-sm" href="cate_edit.php?id=<?php echo $rs['item_id']; ?>">编辑</a>
-                                <a class="btn btn-danger btn-sm" href="cate_del.php?id=<?php echo $rs['item_id']; ?>">删除</a>
+                                <a class="btn btn-default btn-sm" href="cate_edit.php?id=<?php echo $rs['cate_id']; ?>">编辑</a>
+                                <a class="btn btn-danger btn-sm" href="cate_del.php?id=<?php echo $rs['cate_id']; ?>">删除</a>
                             </td>
                         </tr>
                         <?php } ?>
