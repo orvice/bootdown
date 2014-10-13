@@ -71,7 +71,7 @@ else
             <div class="icon">
                 <i class="ion ion-cloud"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="item_manage.php" class="small-box-footer">
                 管理 <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -90,7 +90,7 @@ else
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="cate_manage.php" class="small-box-footer">
                 管理 <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -109,7 +109,7 @@ else
             <div class="icon">
                 <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="user_manage.php" class="small-box-footer">
                 查看 <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -119,17 +119,17 @@ else
         <div class="small-box bg-red">
             <div class="inner">
                 <h3>
-                    65
+                    6
                 </h3>
                 <p>
-                    Unique Visitors
+                    任务
                 </p>
             </div>
             <div class="icon">
                 <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
+            <a href="tasks.php" class="small-box-footer">
+                查看 <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
     </div><!-- ./col -->
