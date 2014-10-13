@@ -43,8 +43,8 @@ else
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        下载管理
-        <small>Items Manage</small>
+        分类管理
+        <small>Cate Manage</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> 后台</a></li>
@@ -55,42 +55,35 @@ else
 <!-- Main content -->
 <section class="content">
     <?php
-    $item_sql_all = "SELECT * FROM `bd_item`";
-    $query = mysql_query($item_sql_all);
+    $cate_sql =" SELECT * FROM `bd_cate` ";
+    $query = mysql_query($cate_sql);
     ?>
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">下载管理</h3>
-                    <div class="box-tools">
-                        <div class="input-group">
-                            <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="box-title">分类管理</h3>
+                     
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         <tr>
                             <th>ID</th>
-                            <th>文件</th>
-                            <th>日期</th>
-                            <th>大小</th>
+                            <th>分类名</th>
+                            <th>分类下数量</th>
+                            <th>排序</th>
                             <th>操作</th>
                         </tr>
                         <?php
                         while($rs=mysql_fetch_array($query)){ ?>
                         <tr>
-                            <td>#<?php echo $rs['item_id']; ?></td>
-                            <td><?php echo $rs['item_title']; ?></td>
-                            <td><?php echo $rs['item_date']; ?></td>
-                            <td><?php echo $rs['item_size']; ?></td>
+                            <td>#<?php echo $rs['cate_id']; ?></td>
+                            <td> <?php echo $rs['cate_name']; ?></td>
+                            <td> <?php echo  cate_item_count($rs['cate_id']); ?></td>
+                            <td> <?php echo $rs['cate_order']; ?></td>
                             <td>
-                                <a class="btn btn-default btn-sm" href="item_edit.php?id=<?php echo $rs['item_id']; ?>">编辑</a>
-                                <a class="btn btn-danger btn-sm" href="item_del.php?id=<?php echo $rs['item_id']; ?>">删除</a>
+                                <a class="btn btn-default btn-sm" href="cate_edit.php?id=<?php echo $rs['item_id']; ?>">编辑</a>
+                                <a class="btn btn-danger btn-sm" href="cate_del.php?id=<?php echo $rs['item_id']; ?>">删除</a>
                             </td>
                         </tr>
                         <?php } ?>
