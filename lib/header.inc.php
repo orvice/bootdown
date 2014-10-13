@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Loading Bootstrap -->
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Loading Flat UI -->
 <link href="css/flat-ui.css" rel="stylesheet">

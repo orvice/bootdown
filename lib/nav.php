@@ -16,7 +16,7 @@
                 //已经登录
                 if(!empty($_COOKIE[user_name])) {    ?>
                 <li><a href="#">用户：<?php echo $_COOKIE[user_name];?> </a></li>
-                <li><a href="#">设置</a></li>
+                <li><a href="user">用户中心</a></li>
                 <li><a href="logout.php?action=logout">退出</a></li>
                 <?php } ?>
 
