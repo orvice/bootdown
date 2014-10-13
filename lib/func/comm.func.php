@@ -33,8 +33,14 @@ function get_filename($url=0){
     return $filename;
 }
 
-//根据id获取查询sql
+//根据id获取查询item sql
 function get_item_sql($id){
      $item_sql = "SELECT * FROM `bd_item`  WHERE item_id = $id";
      return $item_sql;
+}
+
+//根据id获取查询cate sql
+function get_cate_sql($id){
+    $cate_sql = "SELECT * FROM `bd_cate`  WHERE cate_id = $id";
+    return $cate_sql;
 }
