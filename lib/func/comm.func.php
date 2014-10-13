@@ -12,7 +12,7 @@ function item_count(){
 
 //获取某个分类下item数
 function cate_item_count($cate_id){
-    $sql = "SELECT COUNT(item_id)  FROM `bd_item` WHERE `item_cate_id` = $$cate_id ";
+    $sql = "SELECT COUNT(item_id)  FROM `bd_item` WHERE `item_cate_id` = $cate_id ";
     $row = mysql_fetch_array( mysql_query($sql) );
     return $row[0];
 }
