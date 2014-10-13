@@ -21,3 +21,11 @@ function admincheck(){
     }
 }
 
+
+
+//统计用户数量函数
+function user_count(){
+    $sql = "SELECT COUNT(uid)  FROM `bd_user`";
+    $row = mysql_fetch_array( mysql_query($sql) );
+    return $row[0];
+}
