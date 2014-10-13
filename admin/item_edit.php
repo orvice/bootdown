@@ -68,7 +68,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <h3 class="box-title">编辑</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="item_edit.php">
+            <form role="form" method="post" action="item_do.php">
                 <div class="box-body">
 
                     <div class="form-group">
