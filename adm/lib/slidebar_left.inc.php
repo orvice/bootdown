@@ -59,13 +59,20 @@
                 </li>
 
                 <li  >
-                    <a href="index.php">
+                    <a href="user_manage.php">
                         <i class="fa fa-users"></i> <span>用户管理</span>
                     </a>
                 </li>
 
+                <li>
+                    <a href="tasks.php">
+                        <i class="fa fa-check-square-o"></i> <span>任务</span>
+                        <small class="badge pull-right bg-blue">6</small>
+                    </a>
+                </li>
+
                  <li>
-                    <a href="pages/mailbox.html">
+                    <a href="msg.php">
                         <i class="fa fa-envelope"></i> <span>信息</span>
                         <small class="badge pull-right bg-yellow">9</small>
                     </a>
