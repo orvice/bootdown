@@ -18,16 +18,14 @@
 
         <?php
 
-            $search_sql = "SELECT * FROM `bd_item` WHERE `item_title` LIKE '$keyword' ";
-
-
-        $query = mysql_query($search_sql);
+        $search_sql = "SELECT * FROM `bd_item` WHERE `item_title` LIKE '$keyword' ";
+        $query = $dbc->query($search_sql);
         //$rss=mysql_fetch_row($query);
         if(!$query){
              echo 'Not Found';
         }
         else{
-        while($rs=mysql_fetch_array($query)){
+        while($rs=$query->fetch_array()){
 
         ?>
         <tr>
