@@ -52,8 +52,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
         </ol>
     </section>
     <?php
-    $item_id = $_GET['id'];
-    $sql     = get_item_sql($item_id);
+    $cate_id = $_GET['id'];
+    $sql     = get_cate_sql($cate_id);
     $query    = $dbc->query($sql);
     $rs       = $query->fetch_array();
     ?>
@@ -68,34 +68,22 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <h3 class="box-title">编辑</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="item_do.php">
+            <form role="form" method="post" action="cate_do.php">
                 <div class="box-body">
 
                     <div class="form-group">
-                        <label for="item_title">标题</label>
-                        <input  class="form-control" name="item_title" value="<?php echo $rs['item_title'];?>" >
+                        <label for="cate_title">分类标题</label>
+                        <input  class="form-control" name="cate_title" value="<?php echo $rs['cate_name'];?>" >
                     </div>
 
                     <div class="form-group">
-                        <label for="item_size">大小</label>
-                        <input   class="form-control" name="item_size"  value="<?php echo $rs['item_size'];?>" >
+                        <label for="cate_order">排序</label>
+                        <input   class="form-control" name="cate_order"  value="<?php echo $rs['cate_order'];?>" >
                     </div>
-
-                    <div class="form-group">
-                        <label for="item_links">下载链接</label>
-                        <input   class="form-control" name="item_link" value="<?php echo $rs['item_url'];?>" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="item_info">详情</label>
-                        <textarea class="form-control" name="item_info" rows="8"  ><?php echo $rs['item_text'];?></textarea>
-                    </div>
-
-
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" name="action" value="update" class="btn btn-primary">提交</button>
+                    <button type="submit" name="action" value="update" class="btn btn-primary">修改</button>
                 </div>
 
         </div><!-- /.box -->
@@ -111,31 +99,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <div class="box-body">
                     <div class="callout callout-danger">
 
-                        <p>当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
-                        <p>浏览数为:<code><?php echo $rs['item_count']; ?></code></p>
-                        <p>最后修改日期为：<code><?php  echo $rs['item_date'];?> </code></p>
-                    </div>
-
-                    <div class="form-group">
-                        <label>分类</label> </br>
-                        <select name="cate"     >
-                            <?php
-                            $cate_sql =" SELECT * FROM `bd_cate` ";
-                            $query = $dbc->query($cate_sql);
-                            while ($rs = $query->fetch_array()){
-                                ?>
-                                <option value="<?php echo $rs['cate_id']; ?>"><?php echo $rs['cate_name']; ?></option>   <?php } ?>
-                        </select>
-                    </div>
-
-                    <div class="callout callout-info">
-                        <h4>注意!</h4>
-                        <p>文件大小请填写单位(MB/GB/...).</p>
-                        <p>下载链接请填写http.</p>
-                    </div>
-                    <div class="callout callout-warning">
-                        <h4>其他</h4>
-                        <p>Other.</p>
+                        <p>当前修改的分类ID为：<code><?php  echo $rs['cate_id'];?> </code></p>
                     </div>
 
                     </form>

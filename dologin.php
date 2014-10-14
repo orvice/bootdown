@@ -21,6 +21,8 @@ if(!empty($_POST)){
 
 //检测用户名及密码是否正确
     $check_query = mysql_query("select uid from bd_user where user_name='$username' and user_pwd='$pwd' limit 1");
+    $query = $dbc->query($check_query);
+    $result = $query->fetch_array();
     if($result = mysql_fetch_array($check_query)){
         //登录成功
         //$_SESSION['user_name'] = $username;

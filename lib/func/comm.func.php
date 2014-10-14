@@ -5,22 +5,37 @@
 
 //统计item数量函数
 function item_count(){
+    global $dbc;
     $sql = "SELECT COUNT(item_id)  FROM `bd_item`";
-    $row = mysql_fetch_array( mysql_query($sql) );
+    $query = $dbc->query($sql);
+    $row = $query->fetch_array();
     return $row[0];
 }
 
 //获取某个分类下item数
 function cate_item_count($cate_id){
-    $sql = "SELECT COUNT(item_id)  FROM `bd_item` WHERE `item_cate_id` = $$cate_id ";
-    $row = mysql_fetch_array( mysql_query($sql) );
+    global $dbc;
+    $sql = "SELECT COUNT(item_id)  FROM `bd_item` WHERE `item_cate_id` = $cate_id ";
+    $query = $dbc->query($sql);
+    $row = $query->fetch_array();
     return $row[0];
 }
 
 //统计分类数量函数
 function cate_count(){
+    global $dbc;
     $sql = "SELECT COUNT(cate_id)  FROM `bd_cate`";
-    $row = mysql_fetch_array( mysql_query($sql) );
+    $query = $dbc->query($sql);
+    $row = $query->fetch_array();
+    return $row[0];
+}
+
+//统计用户数量函数
+function user_count(){
+    global $dbc;
+    $sql = "SELECT COUNT(uid)  FROM `bd_user`";
+    $query = $dbc->query($sql);
+    $row = $query->fetch_array();
     return $row[0];
 }
 
@@ -33,8 +48,14 @@ function get_filename($url=0){
     return $filename;
 }
 
-//根据id获取查询sql
+//根据id获取查询item sql
 function get_item_sql($id){
      $item_sql = "SELECT * FROM `bd_item`  WHERE item_id = $id";
      return $item_sql;
+}
+
+//根据id获取查询cate sql
+function get_cate_sql($id){
+    $cate_sql = "SELECT * FROM `bd_cate`  WHERE cate_id = $id";
+    return $cate_sql;
 }

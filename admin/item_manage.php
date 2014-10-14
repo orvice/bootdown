@@ -56,7 +56,7 @@ else
 <section class="content">
     <?php
     $item_sql_all = "SELECT * FROM `bd_item`";
-    $query = mysql_query($item_sql_all);
+    $query = $dbc->query($item_sql_all);
     ?>
     <div class="row">
         <div class="col-xs-12">
@@ -82,7 +82,7 @@ else
                             <th>操作</th>
                         </tr>
                         <?php
-                        while($rs=mysql_fetch_array($query)){ ?>
+                        while($rs=$query->fetch_array()){ ?>
                         <tr>
                             <td>#<?php echo $rs['item_id']; ?></td>
                             <td><?php echo $rs['item_title']; ?></td>
