@@ -1,23 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: orvice
- * Date: 14-7-8
- * Time: 下午9:07
- */
-
-//Debug
-//echo('Start Login...</br>');
-
-//非法访问控制
-/*if(!isset($_POST['login'])){
-    exit('Error,you have no Permission to visit this pages.');
-}
+ * Admin Login Page
 */
 
 //引用数据库连接文件
 require_once '../lib/config.php';
-
 
 if(!empty($_POST)){
 
@@ -26,25 +13,16 @@ $username = $_POST['username'];
 $pwd      = md5($_POST['password']); //md5加密
 
 //检测用户名及密码是否正确
-$check_query = "select admin_id from bd_admin where admin_username='$username' and admin_pwd='$pwd' limit 1";
+$check_query = "SELECT admin_id FROM bd_admin WHERE admin_username='$username' AND admin_pwd='$pwd' limit 1";
 $query = $dbc->query($check_query);
-if($result = $query->fetch_array()){
-    //登录成功
-    //$_SESSION['user_name'] = $username;
-    //$_SESSION['user_id'] = $result['user_id'];
-    setcookie("admin_name", $username, time()+3600);
-    //session_write_close();
-    header("location: index.php ");
-    //exit(0);
-    //echo $username,' Welcome! Enter to <a href="admin.php">Admin Panel</a><br />';
-    //echo 'click <a href="logout.php?action=logout">Logout</a> !<br />';
-    //echo $_SESSION['user_name'];
-    exit;
-}
-else {
+    if($result = $query->fetch_array()){
+        setcookie("admin_name", $username, time()+3600);
+        header("location: index.php ");
+        exit;
+    }
+    else {
     exit('Failed <a href="javascript:history.back(-1);">Back</a> and try again. ');
-}
-
+    }
 }
 ?>
 
