@@ -21,11 +21,26 @@ function admincheck(){
     }
 }
 
+//添加item函数
+function item_add($title,$cate_id,$link,$size,$info){
 
+}
 
-//统计用户数量函数
-function user_count(){
-    $sql = "SELECT COUNT(uid)  FROM `bd_user`";
-    $row = mysql_fetch_array( mysql_query($sql) );
-    return $row[0];
+//item更新函数
+function item_update(){
+
+}
+
+//cate添加函数
+function cate_add($name,$order){
+    $sql = "INSERT INTO `bd_cate` (`cate_id`, `cate_name`, `cate_order`) VALUES (NULL, '$name', '$order')";
+    $query = mysql_query($sql);
+    return $query;
+}
+
+//cate update函数
+function cate_update($id,$name,$order){
+    $sql ="UPDATE `bd_cate` SET `cate_name` = '$name', `cate_order` = '$order' WHERE `cate_id` = $order";
+    $query = mysql_query($sql);
+    return $query;
 }
