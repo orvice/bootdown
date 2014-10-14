@@ -51,12 +51,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
             <li class="active">下载管理</li>
         </ol>
     </section>
-    <?php
-    $cate_id = $_GET['id'];
-    $sql     = get_cate_sql($cate_id);
-    $query    = mysql_query($sql);
-    $rs       = mysql_fetch_array($query);
-    ?>
+    
     <!-- Main content -->
     <section class="content">
         <div class="row">

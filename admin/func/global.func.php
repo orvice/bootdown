@@ -33,14 +33,16 @@ function item_update(){
 
 //cate添加函数
 function cate_add($name,$order){
+    global $dbc;
     $sql = "INSERT INTO `bd_cate` (`cate_id`, `cate_name`, `cate_order`) VALUES (NULL, '$name', '$order')";
-    $query = mysql_query($sql);
+    $query = $dbc->query($sql);
     return $query;
 }
 
 //cate update函数
 function cate_update($id,$name,$order){
+    global $dbc;
     $sql ="UPDATE `bd_cate` SET `cate_name` = '$name', `cate_order` = '$order' WHERE `cate_id` = $order";
-    $query = mysql_query($sql);
+    $query = $dbc->query($sql);
     return $query;
 }

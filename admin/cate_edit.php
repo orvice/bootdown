@@ -54,8 +54,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
     <?php
     $cate_id = $_GET['id'];
     $sql     = get_cate_sql($cate_id);
-    $query    = mysql_query($sql);
-    $rs       = mysql_fetch_array($query);
+    $query    = $dbc->query($sql);
+    $rs       = $query->fetch_array();
     ?>
     <!-- Main content -->
     <section class="content">

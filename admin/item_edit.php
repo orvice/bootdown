@@ -54,8 +54,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
     <?php
     $item_id = $_GET['id'];
     $sql     = get_item_sql($item_id);
-    $query    = mysql_query($sql);
-    $rs       = mysql_fetch_array($query);
+    $query    = $dbc->query($sql);
+    $rs       = $query->fetch_array();
     ?>
     <!-- Main content -->
     <section class="content">
@@ -121,8 +121,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         <select name="cate"     >
                             <?php
                             $cate_sql =" SELECT * FROM `bd_cate` ";
-                            $query = mysql_query($cate_sql);
-                            while ($rs = mysql_fetch_array($query)){
+                            $query = $dbc->query($cate_sql);
+                            while ($rs = $query->fetch_array()){
                                 ?>
                                 <option value="<?php echo $rs['cate_id']; ?>"><?php echo $rs['cate_name']; ?></option>   <?php } ?>
                         </select>

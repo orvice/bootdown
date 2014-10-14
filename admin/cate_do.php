@@ -76,6 +76,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                                 <b>非法访问!</b> 有错误发生！
                             </div>
                         <?php } ?>
+
                         <div class="alert alert-info alert-dismissable">
                             <i class="fa fa-info"></i>
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

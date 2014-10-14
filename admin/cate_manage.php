@@ -56,7 +56,7 @@ else
 <section class="content">
     <?php
     $cate_sql =" SELECT * FROM `bd_cate` ";
-    $query = mysql_query($cate_sql);
+    $query = $dbc->query($cate_sql);
     ?>
     <div class="row">
         <div class="col-xs-12">
@@ -75,7 +75,7 @@ else
                             <th>操作</th>
                         </tr>
                         <?php
-                        while($rs=mysql_fetch_array($query)){ ?>
+                        while($rs=$query->fetch_array()){ ?>
                         <tr>
                             <td>#<?php echo $rs['cate_id']; ?></td>
                             <td> <?php echo $rs['cate_name']; ?></td>
