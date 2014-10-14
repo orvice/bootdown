@@ -26,8 +26,9 @@ $username = $_POST['username'];
 $pwd      = md5($_POST['password']); //md5加密
 
 //检测用户名及密码是否正确
-$check_query = mysql_query("select admin_id from bd_admin where admin_username='$username' and admin_pwd='$pwd' limit 1");
-if($result = mysql_fetch_array($check_query)){
+$check_query = "select admin_id from bd_admin where admin_username='$username' and admin_pwd='$pwd' limit 1";
+$query = $dbc->query($check_query);
+if($result = $query->fetch_array()){
     //登录成功
     //$_SESSION['user_name'] = $username;
     //$_SESSION['user_id'] = $result['user_id'];
