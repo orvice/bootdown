@@ -42,7 +42,7 @@ function cate_add($name,$order){
 //cate update函数
 function cate_update($id,$name,$order){
     global $dbc;
-    $sql ="UPDATE `bd_cate` SET `cate_name` = '$name', `cate_order` = '$order' WHERE `cate_id` = $order";
+    $sql ="UPDATE `bd_cate` SET `cate_name` = '$name', `cate_order` = '$order' WHERE `cate_id` = $id";
     $query = $dbc->query($sql);
     return $query;
 }

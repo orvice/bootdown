@@ -83,7 +83,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" name="action" value="update" class="btn btn-primary">修改</button>
+                    <button type="submit" name="cate_id" value="<?php  echo $rs['cate_id'];?>" class="btn btn-primary">修改</button>
                 </div>
 
         </div><!-- /.box -->
