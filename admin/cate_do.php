@@ -68,7 +68,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         <b>Ok!</b> <?php echo $msg; ?>
                     </div>
                     </br>
-                </div> 
+                </div>
             </div><!-- /.error-content -->
         </div><!-- /.error-page -->
     </section><!-- /.content -->

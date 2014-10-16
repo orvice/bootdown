@@ -24,20 +24,12 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-
     <title>管理后台</title>
     <?php include_once 'lib/header.inc.php'; ?>
-
 </head>
 <body class="skin-blue">
-
-
 <?php include_once 'lib/nav.inc.php';
 include_once 'lib/slidebar_left.inc.php';  ?>
-
-
-
-
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
     <!-- Content Header (Page header) -->
@@ -51,18 +43,39 @@ include_once 'lib/slidebar_left.inc.php';  ?>
             <li class="active">下载管理</li>
         </ol>
     </section>
-
     <!-- Main content -->
     <section class="content">
+        <div class="page">
+            <div class="content">
+                <div align="center"   ><?php
+                    //$action = $_POST['action'];
+                    $title   = $_POST['item_title'];
+                    $size    = $_POST['item_size'];
+                    $link    = $_POST['item_link'];
+                    $info    = $_POST['info'];
+                    if(empty($_POST['cate_id'])){
+                        //添加
+                        cate_add($name,$order);
+                        $msg = "添加成功";
+                    }else{
+                        //修改
+                        $id = $_POST['cate_id'];
+                        cate_update($id,$name,$order);
+                        $msg = "修改成功";
+                    }
+                    ?>
+                    <div >
+                        <i class="fa fa-check"></i>
 
-
+                        <b>Ok!</b> <?php echo $msg; ?>
+                    </div>
+                    </br>
+                </div>
+            </div><!-- /.error-content -->
+        </div><!-- /.error-page -->
     </section><!-- /.content -->
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
-
-
-
 <?php include_once 'lib/footer.inc.php'; ?>
-
 </body>
 </html>

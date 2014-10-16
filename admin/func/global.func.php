@@ -53,3 +53,17 @@ function cate_del($id){
     $query = $dbc->query($sql);
     return $query;
 }
+
+//item add func
+function item_add(){
+    global $dbc;
+    $sql = "INSERT INTO `bd_item` (`item_id`, `item_title`, `item_cate_id`, `item_url`, `item_size`, `item_text`, `item_count`, `item_date`)
+           VALUES (NULL, 'New Item', '2', '#', '78MB', 'New Item Info', '', '')";
+}
+
+//item update func
+function item_update($id){
+    global $dbc;
+    $sql ="UPDATE `bd_item` SET `item_date` = '2014-10-23'
+           WHERE `item_id` = $id ";
+}
