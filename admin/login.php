@@ -60,11 +60,11 @@ $query = $dbc->query($check_query);
                 <input type="password"  name="password" class="form-control" placeholder="Password" required>
             </div>
             <div class="form-group">
-                <input type="checkbox" name="remember_me"/> Remember me
+                <input type="checkbox" name="remember_me"/> 记住登录
             </div>
         </div>
         <div class="footer">
-            <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >记住登录</button>
+            <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button>
 
             <p><a href="#">忘记密码</a></p>
 
@@ -75,9 +75,9 @@ $query = $dbc->query($check_query);
 
 
 <!-- jQuery 2.0.2 -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="../js/jquery-2.0.3.min.js"></script>
 <!-- Bootstrap -->
-<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
 </body>
 
