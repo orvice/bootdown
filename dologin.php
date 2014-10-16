@@ -20,20 +20,15 @@ if(!empty($_POST)){
     $pwd      = md5($_POST['password']); //md5加密
 
 //检测用户名及密码是否正确
-    $check_query = mysql_query("select uid from bd_user where user_name='$username' and user_pwd='$pwd' limit 1");
+    //$check_query = mysql_query("select uid from bd_user where user_name='$username' and user_pwd='$pwd' limit 1");
+    $check_query = "select * from bd_user where user_name='$username'  limit 1";
     $query = $dbc->query($check_query);
-    $result = $query->fetch_array();
-    if($result = mysql_fetch_array($check_query)){
-        //登录成功
-        //$_SESSION['user_name'] = $username;
-        //$_SESSION['user_id'] = $result['user_id'];
+    $rs = $query->fetch_array();
+    //读取密码
+    $pw = $rs['user_pwd'];
+    if($pwd == $pw ){
         setcookie("user_name", $username, time()+3600);
-        //session_write_close();
         header("location: index.php ");
-        //exit(0);
-        //echo $username,' Welcome! Enter to <a href="admin.php">Admin Panel</a><br />';
-        //echo 'click <a href="logout.php?action=logout">Logout</a> !<br />';
-        //echo $_SESSION['user_name'];
         exit;
     }
     else {

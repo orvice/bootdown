@@ -2,8 +2,8 @@
 //保存_GET值
 $item_id  = $_GET[itemid];
 $item_sql = get_item_sql($item_id);
-$query    = mysql_query($item_sql);
-$rs       = mysql_fetch_array($query);
+$query    = $dbc->query($item_sql);
+$rs       = $query->fetch_array();
 ?>
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

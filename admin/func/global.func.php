@@ -42,7 +42,14 @@ function cate_add($name,$order){
 //cate update函数
 function cate_update($id,$name,$order){
     global $dbc;
-    $sql ="UPDATE `bd_cate` SET `cate_name` = '$name', `cate_order` = '$order' WHERE `cate_id` = $order";
+    $sql ="UPDATE `bd_cate` SET `cate_name` = '$name', `cate_order` = '$order' WHERE `cate_id` = $id";
+    $query = $dbc->query($sql);
+    return $query;
+}
+//cate Del func
+function cate_del($id){
+    global $dbc;
+    $sql ="DELETE FROM `bd_cate`  WHERE `cate_id` = $id";
     $query = $dbc->query($sql);
     return $query;
 }
