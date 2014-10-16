@@ -46,3 +46,10 @@ function cate_update($id,$name,$order){
     $query = $dbc->query($sql);
     return $query;
 }
+//cate Del func
+function cate_del($id){
+    global $dbc;
+    $sql ="DELETE FROM `bd_cate`  WHERE `cate_id` = $id";
+    $query = $dbc->query($sql);
+    return $query;
+}
