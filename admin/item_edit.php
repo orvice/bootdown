@@ -113,7 +113,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                         <p>当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
                         <p>浏览数为:<code><?php echo $rs['item_count']; ?></code></p>
-                        <p>最后修改日期为：<code><?php  echo $rs['item_date'];?> </code></p>
+                        <p>最后修改日期为：<code><?php  echo $rs['item_date']; $ic_id = $rs['item_cate_id'];  ?> </code></p>
                     </div>
 
                     <div class="form-group">
@@ -124,7 +124,9 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                             $query = $dbc->query($cate_sql);
                             while ($rs = $query->fetch_array()){
                                 ?>
-                                <option value="<?php echo $rs['cate_id']; ?>"><?php echo $rs['cate_name']; ?></option>   <?php } ?>
+                                <option value="<?php echo $rs['cate_id']; ?>" <?php if($rs['cate_id']==$ic_id){echo " selected=\"selected\"";} ?>>
+                                    <?php echo $rs['cate_name']; ?>
+                                </option>   <?php } ?>
                         </select>
                     </div>
 
