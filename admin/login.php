@@ -25,9 +25,8 @@ $query = $dbc->query($check_query);
     }
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html class="bg-black">
 <head>
     <meta charset="utf-8">
     <title>登录</title>
