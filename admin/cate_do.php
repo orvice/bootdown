@@ -24,20 +24,12 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-
     <title>管理后台</title>
     <?php include_once 'lib/header.inc.php'; ?>
-
 </head>
 <body class="skin-blue">
-
-
 <?php include_once 'lib/nav.inc.php';
 include_once 'lib/slidebar_left.inc.php';  ?>
-
-
-
-
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
     <!-- Content Header (Page header) -->
@@ -48,18 +40,13 @@ include_once 'lib/slidebar_left.inc.php';  ?>
         </h1>
         <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-dashboard"></i> 后台</a></li>
-            <li class="active">下载管理</li>
+            <li class="active">分类管理</li>
         </ol>
     </section>
-
     <!-- Main content -->
     <section class="content">
-
-
         <div class="page">
-
             <div class="content">
-
                 <div align="center"   ><?php
                     //$action = $_POST['action'];
                     $name   = $_POST['cate_title'];
@@ -81,20 +68,12 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         <b>Ok!</b> <?php echo $msg; ?>
                     </div>
                     </br>
-                </div>
-
+                </div> 
             </div><!-- /.error-content -->
         </div><!-- /.error-page -->
-
-
-
     </section><!-- /.content -->
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
-
-
-
 <?php include_once 'lib/footer.inc.php'; ?>
-
 </body>
 </html>
