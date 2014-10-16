@@ -56,6 +56,8 @@ include_once 'lib/slidebar_left.inc.php';  ?>
     $sql     = get_item_sql($item_id);
     $query    = $dbc->query($sql);
     $rs       = $query->fetch_array();
+    //保存item的分类id
+    $ic_id = $rs['item_cate_id'];
     ?>
     <!-- Main content -->
     <section class="content">
@@ -113,7 +115,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                         <p>当前编辑的ID为<code><?php echo  $rs['item_id']; ?></code></p>
                         <p>浏览数为:<code><?php echo $rs['item_count']; ?></code></p>
-                        <p>最后修改日期为：<code><?php  echo $rs['item_date']; $ic_id = $rs['item_cate_id'];  ?> </code></p>
+                        <p>最后修改日期为：<code><?php  echo $rs['item_date'];  ?> </code></p>
                     </div>
 
                     <div class="form-group">
