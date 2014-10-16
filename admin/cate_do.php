@@ -64,21 +64,27 @@ include_once 'lib/slidebar_left.inc.php';  ?>
 
                  </br>
 
-                  <div><?php
+                  <div align="center"   ><?php
                       //$action = $_POST['action'];
                       $name   = $_POST['cate_title'];
                       $order  = $_POST['cate_order'];
                       if(empty($_POST['cate_id'])){
                           //添加
                           cate_add($name,$order);
-                          echo "添加成功";
+                          $msg = "添加成功";
                       }else{
                           //修改
                           $id = $_POST['cate_id'];
                           cate_update($id,$name,$order);
-                          echo "修改成功";
+                          $msg = "修改成功";
                       }
                       ?>
+                      <div class="alert alert-success alert-dismissable">
+                          <i class="fa fa-check"></i>
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          <b>Ok!</b> <?php echo $msg; ?>
+                      </div>
+                      </br>
                   </div>
 
               </div><!-- /.box -->
