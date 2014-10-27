@@ -21,8 +21,6 @@ function admincheck(){
     }
 }
 
-
-
 //cate添加函数
 function cate_add($name,$order){
     global $dbc;
@@ -47,16 +45,16 @@ function cate_del($id){
 }
 
 //item add func
-function item_add(){
+function item_add($id=NULL,$title,$size,$url,$cate_id,$info){
     global $dbc;
     $sql = "INSERT INTO `bd_item` (`item_id`, `item_title`, `item_cate_id`, `item_url`, `item_size`, `item_text`, `item_count`, `item_date`)
-           VALUES (NULL, 'New Item', '2', '#', '78MB', 'New Item Info', '', '')";
+           VALUES (NULL, '$title', '$cate_id', '$url', '$size', '$info', '1', 'now')";
     $query = $dbc->query($sql);
     return $query;
 }
 
 //item update func
-function item_update($id){
+function item_update($id,$title,$cate_id,$size,$info){
     global $dbc;
     $sql ="UPDATE `bd_item` SET `item_date` = '2014-10-23'
            WHERE `item_id` = $id ";
