@@ -51,7 +51,7 @@ $query = $dbc->query($check_query);
 <div class="form-box" id="login-box">
 
     <div class="header">登录</div>
-      <form role="form" action="login.php" method="post">
+      <form role="form" action="login.php" method="post" onsubmit="return logincheck()">
         <div class="body bg-gray">
             <div class="form-group">
                 <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
@@ -60,20 +60,39 @@ $query = $dbc->query($check_query);
                 <input type="password"  name="password" class="form-control" placeholder="Password" required>
             </div>
             <div class="form-group">
-                <input type="checkbox" name="remember_me"/> 记住登录
+                <input type="checkbox" name="remember_me"/> 记住登录  <a href="#">忘记密码</a>
             </div>
         </div>
         <div class="footer">
             <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button>
 
-            <p><a href="#">忘记密码</a></p>
+            <p><img src="../img/icon/240.png"></p>
 
         </div>
       </form>
 
 </div>
 
+<script LANGUAGE="javascript">
 
+    function logincheck()
+    {
+        if(document.login.username.value.length==0){
+            alert("请输入用户名");
+            document.login.username.focus();
+            return false;
+        }
+
+        if(document.login.password.value.length==0){
+            alert("请输入密码!");
+            document.login.password.focus();
+            return false;
+        }
+
+
+    }
+
+</script>
 <!-- jQuery 2.0.2 -->
 <script src="../js/jquery-2.0.3.min.js"></script>
 <!-- Bootstrap -->
