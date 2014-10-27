@@ -64,10 +64,7 @@ $query = $dbc->query($check_query);
             </div>
         </div>
         <div class="footer">
-            <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button>
-
-            <p><img src="../img/icon/240.png"></p>
-
+            <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button> 
         </div>
       </form>
 
