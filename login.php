@@ -49,7 +49,7 @@ $code_url = $o->getAuthorizeURL( $weibo_callback_url );
         <div class="footer">
             <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button>
 
-            <p><a href="<?=$code_url?>"><img src="img/icon/240.png"></a></p>
+            <p><a href="<?=$code_url?>"><img src="img/icon/weibo_login_240.png"></a></p>
 
         </div>
     </form>
