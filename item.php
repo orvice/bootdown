@@ -1,15 +1,11 @@
 <?php
 include_once 'lib/config.php';
-
-
+include_once 'lib/func/comm.func.php';
 //保存_GET值
 $item_id  = $_GET[itemid];
-$item_sql = "SELECT * FROM `bd_item`  WHERE item_id = $item_id ";
-$query    = mysql_query($item_sql);
-$rs       = mysql_fetch_array($query);
-
-
-
+$item_sql = get_item_sql($item_id);
+$query    = $dbc->query($item_sql);
+$rs       = $query->fetch_array();
 ?>
 <!DOCTYPE html>
 <html lang="en">

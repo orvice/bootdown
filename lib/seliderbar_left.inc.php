@@ -8,8 +8,8 @@
     <ul class="nav nav-sidebar">
         <?php
              $cate_sql =" SELECT * FROM `bd_cate` ";
-             $query = mysql_query($cate_sql);
-             while ($rs = mysql_fetch_array($query)){
+             $query = $dbc->query($cate_sql);
+             while ($rs = $query->fetch_array()){
 
         ?>
 

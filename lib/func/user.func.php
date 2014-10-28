@@ -1,15 +1,56 @@
 <?php
 //用户相关函数
 
-//检测用户名是否存在函数，存在返回true
-function username_check($username=""){
-    $user_check_sql = "SELECT * FROM `bd_user` WHERE user_name= '$username' ";
-    $query = mysql_query($user_check_sql);
-    if ($query){
-        return true;
+//前台用户登陆检测
+function user_login_check($user,$pwd){
+    global $dbc;
+    $check_query = "SELECT * FROM bd_user WHERE user_name='$user'  limit 1";
+    $query = $dbc->query($check_query);
+    if(!$query){
+        //用户名不存在，返回0
+        return 0;
+    }else{
+        $rs = $query->fetch_array();
+        if($rs['pwd'==$pwd]){
+            //密码正确返回1
+            return 1;
+        }else{
+            //密码错误返回2
+            return 2;
+        }
     }
-    else{
-        return false;
+
+}
+
+//根据用户名返回UID
+function get_user_uid($username){
+    global $dbc;
+    $sql = "SELECT * FROM bd_user WHERE user_name='$username'  limit 1";
+    $query = $dbc->query($sql);
+    if(!$query){
+        //无此用户返回0
+        return 0;
+    }else{
+        //返回UID
+        $rs = $query->fetch_array();
+        $uid = $rs['uid'];
+        return $uid;
+    }
+}
+
+//根据UID返回username
+function get_user_name($uid){
+    global $dbc;
+    $sql = "SELECT * FROM bd_user WHERE uid='$uid'  limit 1";
+    $query = $dbc->query($sql);
+    if(!$query){
+        //无此用户返回0
+        return 0;
+    }else{
+        //返回UID
+        $rs = $query->fetch_array();
+        $username = $rs['user_name'];
+        return $username;
     }
 }
 

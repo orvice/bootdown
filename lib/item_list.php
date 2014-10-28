@@ -24,13 +24,13 @@
             $cate_id = $_GET[id];
             $item_sql_all = "SELECT * FROM `bd_item` WHERE item_cate_id = '$cate_id' ";
         }
-        $query = mysql_query($item_sql_all);
+        $query =$dbc->query($item_sql_all);
         //$rss=mysql_fetch_row($query);
         if(!$query){
              echo 'Not Found';
         }
         else{
-        while($rs=mysql_fetch_array($query)){
+        while($rs=$query->fetch_array()){
 
         ?>
         <tr>
