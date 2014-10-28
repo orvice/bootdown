@@ -1,5 +1,8 @@
 <?php
-session_start();
+//设置编码
+header("content-type:text/html;charset=utf-8");
+
+//session_start();
 require_once 'lib/config.php'  ;
 require_once 'lib/sina_weibo/config.php' ;
 require_once 'lib/sina_weibo/saetv2.ex.class.php' ;
@@ -30,10 +33,10 @@ if ($token) {
     $uid = $db->get_bd_uid($weibo_uid);
     //echo "</br>本地UID:".$uid;
     $username = get_user_name($uid);
-    echo $username;
-    setcookie("user_name", $username, time() + 3600);
+    //echo $username;
+    setcookie("user_name", $username, time() + 3600*24);
     header("location: index.php ");
-    echo "debug";
+    //echo "debug";
 
 }else{
     ?>
