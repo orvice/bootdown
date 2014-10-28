@@ -25,7 +25,7 @@ function user_login_check($user,$pwd){
 //根据用户名返回UID
 function get_user_uid($username){
     global $dbc;
-    $sql = "SELECT * FROM bd_user WHERE user_name='$user'  limit 1";
+    $sql = "SELECT * FROM bd_user WHERE user_name='$username'  limit 1";
     $query = $dbc->query($sql);
     if(!$query){
         //无此用户返回0
