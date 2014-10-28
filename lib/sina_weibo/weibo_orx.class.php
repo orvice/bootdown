@@ -42,3 +42,26 @@ class weibo_token {
         return $expires_in;
     }
 }
+
+class weibo_db{
+    //与数据库相关的
+
+    //根据微博UID获取BootDown系统的UID
+    function get_bd_uid($weibo_uid){
+        global $dbc;
+        $sql = "SELECT * FROM bd_user WHERE weibo_uid='$weibo_uid'  limit 1";
+        $query = $dbc->query($sql);
+        if(!$query){
+            return 0;
+        }else{
+            $rs = $query->fetch_array();
+            $uid = $rs['uid'];
+            return $uid;
+        }
+    }
+
+    //更新token
+    function update_weibo_token($weibo_uid,$weibo_token){
+
+    }
+}
