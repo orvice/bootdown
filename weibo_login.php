@@ -1,9 +1,11 @@
 <?php
 session_start();
-include_once( 'lib/config.php' );
-include_once( 'lib/sina_weibo/config.php' );
-include_once( 'lib/sina_weibo/saetv2.ex.class.php' );
-include_once( 'lib/sina_weibo/weibo_orx.class.php' );
+require_once 'lib/config.php'  ;
+require_once 'lib/sina_weibo/config.php' ;
+require_once 'lib/sina_weibo/saetv2.ex.class.php' ;
+require_once 'lib/sina_weibo/weibo_orx.class.php' ;
+require_once 'lib/func/user.func.php';
+
 $o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
 
 if (isset($_REQUEST['code'])) {
@@ -18,19 +20,28 @@ if (isset($_REQUEST['code'])) {
 
 if ($token) {
     $_SESSION['token'] = $token;
-    setcookie( 'weibojs_'.$o->client_id, http_build_query($token) );
+    setcookie('weibojs_' . $o->client_id, http_build_query($token));
     ?>
-    授权完成,<a href="weibolist.php">进入你的微博列表页面</a><br />
-    <?php  var_dump($token);
+
+    <?php
+
+    //var_dump($token);
 
     $lo = new weibo_token($token);
-    echo $lo->get_uid();
-
+    $weibo_uid = $lo->get_uid();
+    $db = new weibo_db();
+    $uid = $db->get_bd_uid($weibo_uid);
+    //echo "</br>本地UID:".$uid;
+    $username = get_user_name($uid);
+    echo $username;
+    setcookie("user_name", $username, time() + 3600);
+    header("location: index.php ");
+ 
     ?>
 <?php
 } else {
     ?>
-    授权失败。
+    授权失败。请<a href="login.php">重新登录</a>
 <?php
 }
 ?>
