@@ -11,6 +11,7 @@ BootDown is a php dowaload manage system base on [Bootstrap](http://getbootstrap
 * 完成后台分类管理
 * 下载管理
 * 前台分页功能
+* 微博登陆
  
 
  
