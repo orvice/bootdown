@@ -1,7 +1,7 @@
 <?php
 //用户相关函数
 
-//登陆香港
+//前台用户登陆检测
 function user_login_check($user,$pwd){
     global $dbc;
     $check_query = "SELECT * FROM bd_user WHERE user_name='$user'  limit 1";
@@ -22,15 +22,19 @@ function user_login_check($user,$pwd){
 
 }
 
-//检测用户名是否存在函数，存在返回true
-function username_check($username=""){
-    $user_check_sql = "SELECT * FROM `bd_user` WHERE user_name= '$username' ";
-    $query = mysql_query($user_check_sql);
-    if ($query){
-        return true;
-    }
-    else{
-        return false;
+//根据用户名返回UID
+function get_user_uid($username){
+    global $dbc;
+    $sql = "SELECT * FROM bd_user WHERE user_name='$user'  limit 1";
+    $query = $dbc->query($sql);
+    if(!$query){
+        //无此用户返回0
+        return 0;
+    }else{
+        //返回UID
+        $rs = $query->fetch_array();
+        $uid = $rs['id'];
+        return $uid;
     }
 }
 
