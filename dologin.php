@@ -21,7 +21,7 @@ if(!empty($_POST)){
     $pwd      = md5($_POST['password']); //md5加密
 
     $rt = user_login_check($username,$pwd);
-    if($rt == 1){
+    if($rt==1){
         setcookie("user_name", $username, time()+3600);
         header("location: index.php ");
         exit;

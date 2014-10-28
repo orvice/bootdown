@@ -1,30 +1,3 @@
-<?php
-/**
- * Admin Login Page
-*/
-
-//引用数据库连接文件
-require_once '../lib/config.php';
-
-if(!empty($_POST)){
-
-//获取_POST并赋值
-$username = $_POST['username'];
-$pwd      = md5($_POST['password']); //md5加密
-
-//检测用户名及密码是否正确
-$check_query = "SELECT admin_id FROM bd_admin WHERE admin_username='$username' AND admin_pwd='$pwd' limit 1";
-$query = $dbc->query($check_query);
-    if($result = $query->fetch_array()){
-        setcookie("admin_name", $username, time()+3600);
-        header("location: index.php ");
-        exit;
-    }
-    else {
-    exit('Failed <a href="javascript:history.back(-1);">Back</a> and try again. ');
-    }
-}
-?>
 <!DOCTYPE html>
 <html class="bg-black">
 <head>
@@ -51,7 +24,7 @@ $query = $dbc->query($check_query);
 <div class="form-box" id="login-box">
 
     <div class="header">登录</div>
-      <form role="form" action="login.php" method="post" onsubmit="return logincheck()">
+      <form role="form" action="dologin.php" method="post" onsubmit="return logincheck()">
         <div class="body bg-gray">
             <div class="form-group">
                 <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
@@ -64,7 +37,7 @@ $query = $dbc->query($check_query);
             </div>
         </div>
         <div class="footer">
-            <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button>
+            <button type="submit" class="btn bg-olive btn-block"  name="login" >登录</button>
         </div>
       </form>
 
