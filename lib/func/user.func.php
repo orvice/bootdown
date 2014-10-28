@@ -33,7 +33,7 @@ function get_user_uid($username){
     }else{
         //返回UID
         $rs = $query->fetch_array();
-        $uid = $rs['id'];
+        $uid = $rs['uid'];
         return $uid;
     }
 }
