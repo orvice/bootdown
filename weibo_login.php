@@ -19,11 +19,8 @@ if (isset($_REQUEST['code'])) {
 }
 
 if ($token) {
-    $_SESSION['token'] = $token;
-    setcookie('weibojs_' . $o->client_id, http_build_query($token));
-    ?>
-
-    <?php
+    //$_SESSION['token'] = $token;
+    //setcookie('weibojs_' . $o->client_id, http_build_query($token));
 
     //var_dump($token);
 
@@ -36,10 +33,9 @@ if ($token) {
     echo $username;
     setcookie("user_name", $username, time() + 3600);
     header("location: index.php ");
- 
-    ?>
-<?php
-} else {
+    echo "debug";
+
+}else{
     ?>
     授权失败。请<a href="login.php">重新登录</a>
 <?php
