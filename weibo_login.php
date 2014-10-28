@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include_once( 'lib/config.php' );
 include_once( 'lib/sina_weibo/config.php' );
 include_once( 'lib/sina_weibo/saetv2.ex.class.php' );
 include_once( 'lib/sina_weibo/weibo_orx.class.php' );
