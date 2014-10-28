@@ -1,4 +1,13 @@
+<?php
+session_start();
 
+include_once( 'lib/sina_weibo/config.php' );
+include_once( 'lib/sina_weibo/saetv2.ex.class.php' );
+
+$o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
+$weibo_callback_url = "http://lo.zfacg.com:93/bootdown/weibo_login.php";
+$code_url = $o->getAuthorizeURL( $weibo_callback_url );
+?>
 <!DOCTYPE html>
 <html class="bg-black">
 <head>
@@ -40,7 +49,7 @@
         <div class="footer">
             <button type="submit" class="btn bg-olive btn-block" type="submit" name="login" >登录</button>
 
-            <p><img src="img/icon/240.png"></p>
+            <p><a href="<?=$code_url?>"><img src="img/icon/240.png"></a></p>
 
         </div>
     </form>
