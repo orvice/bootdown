@@ -47,10 +47,10 @@ function cate_del($id){
 
 
 //item add func
-function item_add($id=NULL,$title,$size,$url,$cate_id,$info){
+function item_add($title,$size,$url,$cate_id,$info){
     global $dbc;
     $sql = "INSERT INTO `bd_item` (`item_id`, `item_title`, `item_cate_id`, `item_url`, `item_size`, `item_text`, `item_count`, `item_date`)
-           VALUES (NULL, '$title', '$cate_id', '$url', '$size', '$info', '1', 'now')";
+           VALUES (NULL, '$title', '$cate_id', '$url', '$size', '$info', '1', now())";
     $query = $dbc->query($sql);
     return $query;
 }

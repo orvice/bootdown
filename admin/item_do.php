@@ -48,14 +48,15 @@ include_once 'lib/slidebar_left.inc.php';  ?>
         <div class="page">
             <div class="content">
                 <div align="center"   ><?php
-                    //$action = $_POST['action'];
+                    $action = $_POST['action'];
                     $title   = $_POST['item_title'];
                     $size    = $_POST['item_size'];
                     $link    = $_POST['item_link'];
                     $info    = $_POST['info'];
-                    if(empty($_POST['cate_id'])){
+                    $cate_id = $_POST['cate'];
+                    if($action = "add"){
                         //添加
-                        cate_add($name,$order);
+                        item_add($title,$size,$link,$cate_id,$info);
                         $msg = "添加成功";
                     }else{
                         //修改
