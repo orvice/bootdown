@@ -64,3 +64,11 @@ function item_update($id,$title,$cate_id,$url,$size,$info){
     $query = $dbc->query($sql);
     return $query;
 }
+
+//item del
+function item_del($id){
+    global $dbc;
+    $sql = "DELETE FROM `bd_item` WHERE `item_id` = $id";
+    $query = $dbc->query($sql);
+    return $query;
+}
