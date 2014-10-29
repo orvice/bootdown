@@ -82,7 +82,7 @@ else
                             <td> <?php echo  cate_item_count($rs['cate_id']); ?></td>
                             <td> <?php echo $rs['cate_order']; ?></td>
                             <td>
-                                <a class="btn btn-default btn-sm" href="cate_edit.php?id=<?php echo $rs['cate_id']; ?>">编辑</a>
+                                <a class="btn btn-info btn-sm" href="cate_edit.php?id=<?php echo $rs['cate_id']; ?>">编辑</a>
                                 <a class="
                                 <?php if(cate_item_count($rs['cate_id'])!=0){
                                     echo "btn btn-danger btn-sm disabled";
