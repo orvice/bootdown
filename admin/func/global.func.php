@@ -44,6 +44,8 @@ function cate_del($id){
     return $query;
 }
 
+
+
 //item add func
 function item_add($id=NULL,$title,$size,$url,$cate_id,$info){
     global $dbc;
