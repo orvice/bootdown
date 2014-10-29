@@ -62,6 +62,21 @@ class weibo_db{
 
     //更新token
     function update_weibo_token($weibo_uid,$weibo_token){
+        global $dbc;
+        $sql = "UPDATE `pd`.`bd_user` SET `weibo_uid` = '1642502027' WHERE `bd_user`.`uid` = $weibo_uid;";
+    }
 
+    //更新weibo_uid
+    function  update_weibo_uid($uid,$weibo_uid){
+        global $dbc;
+        $sql = "UPDATE `bd_user` SET `weibo_uid` = '$weibo_uid'
+                WHERE  `uid` = $uid;";
+        $query = $dbc->query($sql);
+        if($query){
+            //成功返回1
+            return 1;
+        }else{
+            return 0;
+        }
     }
 }

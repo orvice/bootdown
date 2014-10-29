@@ -44,20 +44,31 @@ function cate_del($id){
     return $query;
 }
 
+
+
 //item add func
-function item_add($id=NULL,$title,$size,$url,$cate_id,$info){
+function item_add($title,$size,$url,$cate_id,$info){
     global $dbc;
     $sql = "INSERT INTO `bd_item` (`item_id`, `item_title`, `item_cate_id`, `item_url`, `item_size`, `item_text`, `item_count`, `item_date`)
-           VALUES (NULL, '$title', '$cate_id', '$url', '$size', '$info', '1', 'now')";
+           VALUES (NULL, '$title', '$cate_id', '$url', '$size', '$info', '1', now())";
     $query = $dbc->query($sql);
     return $query;
 }
 
 //item update func
-function item_update($id,$title,$cate_id,$size,$info){
+function item_update($id,$title,$cate_id,$url,$size,$info){
     global $dbc;
-    $sql ="UPDATE `bd_item` SET `item_date` = '2014-10-23'
-           WHERE `item_id` = $id ";
+    $sql ="UPDATE  `bd_item`
+           SET `item_title` = '$title', `item_cate_id` = '$cate_id', `item_url` = '$url', `item_size` = '$size', `item_text` = '$info', `item_date`=now()
+           WHERE `item_id` = $id;";
+    $query = $dbc->query($sql);
+    return $query;
+}
+
+//item del
+function item_del($id){
+    global $dbc;
+    $sql = "DELETE FROM `bd_item` WHERE `item_id` = $id";
     $query = $dbc->query($sql);
     return $query;
 }

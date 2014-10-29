@@ -21,24 +21,27 @@ if (isset($_REQUEST['code'])) {
     }
 }
 
+//微博登陆成功
 if ($token) {
-    //$_SESSION['token'] = $token;
-    //setcookie('weibojs_' . $o->client_id, http_build_query($token));
-
-    //var_dump($token);
 
     $lo = new weibo_token($token);
     $weibo_uid = $lo->get_uid();
     $db = new weibo_db();
     $uid = $db->get_bd_uid($weibo_uid);
-    //echo "</br>本地UID:".$uid;
-    $username = get_user_name($uid);
-    //echo $username;
-    setcookie("user_name", $username, time() + 3600*24);
-    header("location: index.php ");
-    //echo "debug";
 
-}else{
+    //微博UID系统存在
+    if($uid !=0 && $uid != NULL ){
+        $username = get_user_name($uid);
+        setcookie("user_name", $username, time() + 3600*24);
+        header("location: index.php ");
+    }else{
+        //微博未绑定
+        echo "no";
+    }
+
+}
+//微博登陆授权失败
+else{
     ?>
     授权失败。请<a href="login.php">重新登录</a>
 <?php

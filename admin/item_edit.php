@@ -70,7 +70,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 <h3 class="box-title">编辑</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="item_do.php">
+            <form role="form" method="post" action="item_do.php?action=update">
                 <div class="box-body">
 
                     <div class="form-group">
@@ -97,7 +97,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" name="action" value="update" class="btn btn-primary">提交</button>
+                    <button type="submit" name="id" value="<?php echo $item_id; ?>" class="btn btn-primary">提交</button>
                 </div>
 
         </div><!-- /.box -->
@@ -137,10 +137,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         <p>文件大小请填写单位(MB/GB/...).</p>
                         <p>下载链接请填写http.</p>
                     </div>
-                    <div class="callout callout-warning">
-                        <h4>其他</h4>
-                        <p>Other.</p>
-                    </div>
+
 
                     </form>
                 </div><!-- /.box-body -->
