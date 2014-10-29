@@ -65,7 +65,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                     <div >
                         <i class="fa fa-check"></i>
 
-                        <b>Ok!</b> <?php echo $msg; ?>
+                        <b>Ok!</b> <?php echo $msg; ?> <a href="cate_manage.php">返回列表</a>
                     </div>
                     </br>
                 </div>
