@@ -56,10 +56,11 @@ function item_add($title,$size,$url,$cate_id,$info){
 }
 
 //item update func
-function item_update($id,$title,$cate_id,$size,$info){
+function item_update($id,$title,$cate_id,$url,$size,$info){
     global $dbc;
-    $sql ="UPDATE `bd_item` SET `item_date` = '2014-10-23'
-           WHERE `item_id` = $id ";
+    $sql ="UPDATE  `bd_item`
+           SET `item_title` = '$title', `item_cate_id` = '$cate_id', `item_url` = '$url', `item_size` = '$size', `item_text` = '$info',`item_date`=now()
+           WHERE `item_id` = $id;";
     $query = $dbc->query($sql);
     return $query;
 }
