@@ -7,7 +7,7 @@
 
     <ul class="nav nav-sidebar">
         <?php
-             $cate_sql =" SELECT * FROM `bd_cate` ";
+             $cate_sql =" SELECT * FROM `bd_cate`  ORDER BY cate_order ";
              $query = $dbc->query($cate_sql);
              while ($rs = $query->fetch_array()){
 

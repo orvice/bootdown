@@ -55,7 +55,7 @@ else
 <!-- Main content -->
 <section class="content">
     <?php
-    $cate_sql =" SELECT * FROM `bd_cate` ";
+    $cate_sql =" SELECT * FROM `bd_cate` ORDER BY cate_order  ";
     $query = $dbc->query($cate_sql);
     ?>
     <div class="row">
