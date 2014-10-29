@@ -52,7 +52,7 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                     $title   = $_POST['item_title'];
                     $size    = $_POST['item_size'];
                     $link    = $_POST['item_link'];
-                    $info    = $_POST['info'];
+                    $info    = $_POST['item_info'];
                     $cate_id = $_POST['cate'];
                     if($action == "add"){
                         //添加
@@ -60,8 +60,9 @@ include_once 'lib/slidebar_left.inc.php';  ?>
                         $msg = "添加成功";
                     }else{
                         //修改
-                        item_update($id,$title,$cate_id,$link,$size,$info);
-                        $msg = "修改成功";
+                        $id = $_POST['id'];
+                        $rs = item_update($id,$title,$cate_id,$link,$size,$info);
+                        if($rs){$msg = "修改成功";}
                     }
                     ?>
                     <div >
