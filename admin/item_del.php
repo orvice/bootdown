@@ -1,26 +1,11 @@
 <?php
 //引入配置文件
-include_once '../lib/config.php';
-include_once 'func/global.func.php';
-include_once '../lib/func/comm.func.php'; //获取全局公共函数
-include_once 'func/systems.func.php';
-
-session_start();
-$sessionId = session_id();
-
-//检测是否登录，若没登录则转向登录界面
-
-if(!isset($_COOKIE['admin_name'])){
-    header("Location:login.php");
-    exit();
-
-}
-else
-{
-    $admin_name = $_COOKIE['admin_name'];
-}
+require_once '../lib/config.php';
+require_once 'func/global.func.php';
+require_once '../lib/func/comm.func.php'; //获取全局公共函数
+require_once 'func/systems.func.php';
+require_once 'admin_check.php';
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
