@@ -85,7 +85,7 @@ else
                                 <a class="btn btn-default btn-sm" href="cate_edit.php?id=<?php echo $rs['cate_id']; ?>">编辑</a>
                                 <a class="
                                 <?php if(cate_item_count($rs['cate_id'])!=0){
-                                    echo "btn btn-danger disabled";
+                                    echo "btn btn-danger btn-sm disabled";
                                 }else{
                                     echo "btn-sm btn btn-danger";
                                 }
