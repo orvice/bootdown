@@ -1,26 +1,11 @@
 <?php
 //引入配置文件
-include_once '../lib/config.php';
-include_once 'func/global.func.php';
-include_once '../lib/func/comm.func.php'; //获取全局公共函数
-include_once 'func/systems.func.php';
-
-session_start();
-$sessionId = session_id();
-
-//检测是否登录，若没登录则转向登录界面
-
-if(!isset($_COOKIE['admin_name'])){
-    header("Location:login.php");
-    exit();
-
-}
-else
-{
-    $admin_name = $_COOKIE['admin_name'];
-}
+require_once '../lib/config.php';
+require_once 'func/global.func.php';
+require_once '../lib/func/comm.func.php'; //获取全局公共函数
+require_once 'func/systems.func.php';
+require_once 'admin_check.php';
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +62,7 @@ else
                         <tr>
                             <th>ID</th>
                             <th>文件</th>
-                            <th>日期</th>
+                            <th>最后更新</th>
                             <th>大小</th>
                             <th>操作</th>
                         </tr>
@@ -85,11 +70,11 @@ else
                         while($rs=$query->fetch_array()){ ?>
                         <tr>
                             <td>#<?php echo $rs['item_id']; ?></td>
-                            <td><?php echo $rs['item_title']; ?></td>
+                            <td><a href="../item.php?itemid=<?php echo $rs['item_id']; ?>"><?php echo $rs['item_title']; ?></a></td>
                             <td><?php echo $rs['item_date']; ?></td>
                             <td><?php echo $rs['item_size']; ?></td>
                             <td>
-                                <a class="btn btn-default btn-sm" href="item_edit.php?id=<?php echo $rs['item_id']; ?>">编辑</a>
+                                <a class="btn btn-info btn-sm" href="item_edit.php?id=<?php echo $rs['item_id']; ?>">编辑</a>
                                 <a class="btn btn-danger btn-sm" href="item_del.php?id=<?php echo $rs['item_id']; ?>">删除</a>
                             </td>
                         </tr>

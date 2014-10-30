@@ -19,15 +19,20 @@ if(!empty($_POST)){
     //获取_POST并赋值
     $username = $_POST['username'];
     $pwd      = md5($_POST['password']); //md5加密
-
+    $rem = $_POST['remember_me'];
     $rt = user_login_check($username,$pwd);
     if($rt==1){
-        setcookie("user_name", $username, time()+3600);
+        if($rem= "week"){
+            $ext = 3600*24*7;
+        }else{
+            $ext = 3600;
+        }
+        setcookie("user_name", $username, time()+$ext);
         header("location: index.php ");
         exit;
     }
     else {
-        echo ' <script>alert("Error!")</script> ';
+        echo ' <script>alert("用户名或密码错误!")</script> ';
         echo " <script>window.location='login.php';</script> " ;
     }
 

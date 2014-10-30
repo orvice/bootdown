@@ -43,7 +43,7 @@ $code_url = $o->getAuthorizeURL( $weibo_callback_url );
                 <input type="password"  name="password" class="form-control" placeholder="Password" >
             </div>
             <div class="form-group">
-                <input type="checkbox" name="remember_me"/> 记住登录  <a href="#">忘记密码</a>
+                <input type="checkbox" name="remember_me" value="week"/>保存Cookie7天  <a href="#">忘记密码</a>
             </div>
         </div>
         <div class="footer">
