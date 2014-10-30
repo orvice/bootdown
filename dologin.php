@@ -32,7 +32,7 @@ if(!empty($_POST)){
         exit;
     }
     else {
-        echo ' <script>alert("Error!")</script> ';
+        echo ' <script>alert("用户名或密码错误!")</script> ';
         echo " <script>window.location='login.php';</script> " ;
     }
 
