@@ -1,8 +1,11 @@
 <?php
-include_once 'lib/config.php';
+require_once 'lib/config.php';
 include_once 'lib/func/comm.func.php';
+include_once 'lib/func/item.func.php';
 //保存_GET值
 $item_id  = $_GET[itemid];
+//count ++
+item_count_plus($item_id);
 $item_sql = get_item_sql($item_id);
 $query    = $dbc->query($item_sql);
 $rs       = $query->fetch_array();
