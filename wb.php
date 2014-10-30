@@ -43,7 +43,7 @@ if(empty($_COOKIE['weibo_id'])){
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div class="tab-pane active in" id="login">
-                                <form class="form-horizontal" action='' method="POST">
+                                <form class="form-horizontal" action='wb_do.php' method="POST">
                                     <fieldset>
                                         <div id="legend">
                                             <legend class="">绑定现有账号</legend>
@@ -75,7 +75,7 @@ if(empty($_COOKIE['weibo_id'])){
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="create">
-                                <form id="tab">
+                                <form id="tab" action="wb_do.php" method="post">
                                     <div id="legend">
                                         <legend class="">注册个新账号</legend>
                                     </div>
