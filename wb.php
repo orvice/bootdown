@@ -1,8 +1,14 @@
 <?php
 //this template via http://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
-session_start();
-
 include_once( 'lib/sina_weibo/config.php' );
+session_start();
+if(empty($_COOKIE['weibo_id'])){
+    header("location: index.php");
+}else{
+    $weibo_id = $_COOKIE['weibo_id'];
+    $access_token = $_COOKIE['access_token'];
+}
+
 ?>
 <!DOCTYPE html>
 <html class="bg-black">
