@@ -26,13 +26,17 @@ if ($token) {
 
     $lo = new weibo_token($token);
     $weibo_uid = $lo->get_uid();
+    $access_token = $lo->get_access_token();
     $db = new weibo_db();
     $uid = $db->get_bd_uid($weibo_uid);
 
     //微博UID系统存在
     if($uid !=0 && $uid != NULL ){
         $username = get_user_name($uid);
+        //设置cookie
         setcookie("user_name", $username, time() + 3600*24);
+        //更新access_token
+        $db->update_access_token($uid,$access_token);
         header("location: index.php ");
     }else{
         //微博未绑定

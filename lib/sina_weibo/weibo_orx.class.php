@@ -30,7 +30,7 @@ class weibo_token {
         return $uid;
     }
 
-    //返回Token
+    //返回access token
     function get_access_token(){
         $access_token = $this->token['access_token'];
         return $access_token;
@@ -63,7 +63,16 @@ class weibo_db{
     //更新token
     function update_weibo_token($weibo_uid,$weibo_token){
         global $dbc;
-        $sql = "UPDATE `pd`.`bd_user` SET `weibo_uid` = '1642502027' WHERE `bd_user`.`uid` = $weibo_uid;";
+        $sql = "UPDATE `bd_user` SET `weibo_uid` = '1642502027' WHERE `bd_user`.`uid` = $weibo_uid;";
+    }
+
+    //更新access_token
+    function  update_access_token($weibo_uid,$access_token){
+        global $dbc;
+        $sql = "UPDATE `bd_user` SET `weibo_token` = '$access_token'
+                WHERE `weibo_uid` = $weibo_uid";
+        $query = $dbc->query($sql);
+        return $query;
     }
 
     //更新weibo_uid
