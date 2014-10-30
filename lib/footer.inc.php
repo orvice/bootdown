@@ -1,6 +1,8 @@
 <div class="footer">
-    <div class="container">
-        <p class="text-muted">Copyright © <?php echo date(Y); ?> <a href="#"><?php  echo $site_name; ?></a> Power by <a href="#">BootDown</a> <?php echo $version; ?> .</>
+    <div class="container" align="center">
+        <p class="text-muted"> Copyright © <?php echo date(Y); ?> <a href="#"><?php  echo $site_name; ?></a> Power by <a href="#">BootDown</a> <?php echo $version; ?> .
+        <?php  if(isset($_COOKIE['admin_name'])){ ?> <a href="admin/index.php">管理后台</a> <?php } ?>
+        <p/>
     </div>
 
     <div id="analytics-code" style="display:none">
