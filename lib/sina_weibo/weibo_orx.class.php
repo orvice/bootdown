@@ -67,10 +67,10 @@ class weibo_db{
     }
 
     //更新access_token
-    function  update_access_token($weibo_uid,$access_token){
+    function  update_access_token($uid,$access_token){
         global $dbc;
         $sql = "UPDATE `bd_user` SET `weibo_token` = '$access_token'
-                WHERE `weibo_uid` = $weibo_uid";
+                WHERE `uid` = $uid";
         $query = $dbc->query($sql);
         return $query;
     }
