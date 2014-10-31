@@ -39,8 +39,10 @@ if ($token) {
         $db->update_access_token($uid,$access_token);
         header("location: index.php ");
     }else{
-        //微博未绑定
-        echo "no";
+        //微博未绑定,设置cookie并跳转到绑定页面
+        setcookie("weibo_id",$weibo_uid,time()+3600);
+        setcookie("access_token",$access_token,time()+3600);
+        header("location: wb.php");
     }
 
 }
