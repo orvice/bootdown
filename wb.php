@@ -1,8 +1,14 @@
 <?php
 //this template via http://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
-session_start();
-
 include_once( 'lib/sina_weibo/config.php' );
+session_start();
+if(empty($_COOKIE['weibo_id'])){
+    header("location: index.php");
+}else{
+    $weibo_id = $_COOKIE['weibo_id'];
+    $access_token = $_COOKIE['access_token'];
+}
+
 ?>
 <!DOCTYPE html>
 <html class="bg-black">
@@ -37,7 +43,7 @@ include_once( 'lib/sina_weibo/config.php' );
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div class="tab-pane active in" id="login">
-                                <form class="form-horizontal" action='' method="POST">
+                                <form class="form-horizontal" action='wb_do.php' method="POST">
                                     <fieldset>
                                         <div id="legend">
                                             <legend class="">绑定现有账号</legend>
@@ -69,7 +75,7 @@ include_once( 'lib/sina_weibo/config.php' );
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="create">
-                                <form id="tab">
+                                <form id="tab" action="wb_do.php" method="post">
                                     <div id="legend">
                                         <legend class="">注册个新账号</legend>
                                     </div>
