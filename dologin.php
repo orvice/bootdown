@@ -28,10 +28,13 @@ if(!empty($_POST)){
         }else{
             $ext = 3600;
         }
+        //获取用户id
+        $id = get_user_uid($username);
         //处理密码
         $pw = co_pw($pw);
         setcookie("user_name", $username, time()+$ext);
         setcookie("user_pwd",$pw,time()+$ext);
+        setcookie("user_uid",$id,time()+$ext);
         header("location: index.php ");
         exit;
     }
