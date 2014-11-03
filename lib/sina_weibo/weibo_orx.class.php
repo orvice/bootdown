@@ -8,11 +8,40 @@ class weibo_orx {
     //
 }
 
-class weibo_uid {
+class weibo_show {
     //根据UID返回相关信息
     public $uid;
-    function __construct($uid){
+    public $access_token;
+
+    //URL
+    public $users_show_url = "https://api.weibo.com/2/users/show.json?";
+
+    function __construct($uid,$access_token){
         $this->uid = $uid;
+        $this->access_token = $access_token;
+    }
+
+    //获取screen name
+    function get_screen_name(){
+        $url = $this->users_show_url."uid=".$this->uid."&access_token=".$this->access_token;
+        $curl = curl_init($url);
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+        $rt_json = curl_exec($curl);
+        $ary = json_decode($rt_json,true);
+        $screen_name  = $ary['screen_name'];
+        return $screen_name;
+    }
+
+    //获取头像 url
+    function get_avatar(){
+        $url = $this->users_show_url."uid=".$this->uid."&access_token=".$this->access_token;
+        $curl = curl_init($url);
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+        $rt_json = curl_exec($curl);
+        $ary = json_decode($rt_json,true);
+        $img = $ary['profile_image_url'];
+        return $img;
+
     }
 }
 
