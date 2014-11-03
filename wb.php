@@ -35,7 +35,6 @@ $avatar_url  = $wbu->get_avatar();
         <div class="span12">
             <div class="" id="loginModal">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h3><img src="<?php echo $avatar_url;?>"/> <?php  echo $screen_name; ?>,你好，请绑定账号或创建账号</h3>
                 </div>
                 <div class="modal-body">
