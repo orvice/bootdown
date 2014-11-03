@@ -5,6 +5,7 @@
 
 //引用数据库连接文件
 require_once '../lib/config.php';
+require_once '../lib/func/pw.func.php';
 //引用admin相关函数
 require_once 'func/admin.func.php';
 
@@ -23,7 +24,10 @@ if(!empty($_POST)){
         }else{
             $ext = 3600;
         }
+        //处理密码
+        $pw = co_pw($pw);
         setcookie("admin_name", $admin, time()+$ext);
+        setcookie("admin_pwd",$pw,time()+$ext);
         header("location: index.php ");
         exit;
     }

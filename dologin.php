@@ -12,6 +12,7 @@ header("content-type:text/html;charset=utf-8");
 //引用数据库连接文件
 require_once 'lib/config.php';
 require_once 'lib/func/user.func.php';
+require_once 'lib/func/pw.func.php';
 
 
 if(!empty($_POST)){
@@ -27,7 +28,13 @@ if(!empty($_POST)){
         }else{
             $ext = 3600;
         }
+        //获取用户id
+        $id = get_user_uid($username);
+        //处理密码
+        $pw = co_pw($pw);
         setcookie("user_name", $username, time()+$ext);
+        setcookie("user_pwd",$pw,time()+$ext);
+        setcookie("user_uid",$id,time()+$ext);
         header("location: index.php ");
         exit;
     }
