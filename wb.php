@@ -1,6 +1,7 @@
 <?php
 //this template via http://bootsnipp.com/snippets/featured/loginregister-in-tabbed-interface
 include_once( 'lib/sina_weibo/config.php' );
+include_once( 'lib/sina_weibo/weibo_orx.class.php' );
 session_start();
 if(empty($_COOKIE['weibo_id'])){
     header("location: index.php");
@@ -8,7 +9,9 @@ if(empty($_COOKIE['weibo_id'])){
     $weibo_id = $_COOKIE['weibo_id'];
     $access_token = $_COOKIE['access_token'];
 }
-
+$wbu = new weibo_show($weibo_id,$access_token);
+$screen_name = $wbu->get_screen_name();
+$avatar_url  = $wbu->get_avatar();
 ?>
 <!DOCTYPE html>
 <html class="bg-black">
@@ -33,7 +36,7 @@ if(empty($_COOKIE['weibo_id'])){
             <div class="" id="loginModal">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3>微博用户</h3>
+                    <h3><img src="<?php echo $avatar_url;?>"/> <?php  echo $screen_name; ?>,你好，请绑定账号或创建账号</h3>
                 </div>
                 <div class="modal-body">
                     <div class="well">
