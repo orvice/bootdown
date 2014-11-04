@@ -23,3 +23,16 @@ function get_admin_id($name){
         return $rs['admin_id'];
     }
 }
+
+//根据ID获取密码
+function get_admin_pwd($id){
+    global $dbc;
+    $sql = "SELECT * FROM `bd_admin` WHERE admin_id = '$id' ";
+    $query = $dbc->query($sql);
+    if(!$query){
+        return 0;
+    }else{
+        $rs = $query->fetch_array();
+        return $rs['admin_pwd'];
+    }
+}
