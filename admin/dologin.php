@@ -13,8 +13,8 @@ if(!empty($_POST)){
 
     //获取_POST并赋值
     $admin = $_POST['username'];
-    $pwd      = md5($_POST['password']); //md5加密
-    $rem = $_POST['remember_me'];
+    $pwd   = md5($_POST['password']); //md5加密
+    $rem   = $_POST['remember_me'];
 
     //检测用户名及密码是否正确
     $rt = admin_login_check($admin,$pwd);
@@ -25,9 +25,9 @@ if(!empty($_POST)){
             $ext = 3600;
         }
         //处理密码
-        $pw = co_pw($pw);
+        $pw = co_pw($pwd);
         $id = get_admin_id($admin);
-        setcookie("admin_name", $admin, time()+$ext);
+        setcookie("admin_name",$admin, time()+$ext);
         setcookie("admin_pwd",$pw,time()+$ext);
         setcookie("admin_id",$id,time()+$ext);
         header("location: index.php ");
