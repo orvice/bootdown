@@ -22,5 +22,6 @@ else
     if($pwd != $admin_pwd){
         header("Location:login.php");
     }
+    $admin_email = get_admin_email($admin_id);
 }
 

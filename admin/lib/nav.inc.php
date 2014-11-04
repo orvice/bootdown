@@ -29,7 +29,7 @@
                 <li><!-- start message -->
                     <a href="#">
                         <div class="pull-left">
-                            <img src="../img/avatar3.png" class="img-circle" alt="User Image"/>
+                            <img src="<?php echo get_gravatar($admin_email);?>" class="img-circle" alt="User Image"/>
                         </div>
                         <h4>
                             Support Team
@@ -41,7 +41,7 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                            <img src="<?php echo get_gravatar($admin_email);?>" class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             AdminLTE Design Team
@@ -212,7 +212,7 @@
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
-            <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
+            <img src="<?php echo get_gravatar($admin_email);?>" class="img-circle" alt="User Image" />
             <p>
                 <?php echo $_COOKIE[admin_name];?>
                 <small>Member since Nov. 2012</small>
