@@ -215,25 +215,14 @@
             <img src="<?php echo get_gravatar($admin_email);?>" class="img-circle" alt="User Image" />
             <p>
                 <?php echo $_COOKIE[admin_name];?>
-                <small>Member since Nov. 2012</small>
+
             </p>
         </li>
-        <!-- Menu Body -->
-        <li class="user-body">
-            <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
-            </div>
-            <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-            </div>
-            <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-            </div>
-        </li>
+
         <!-- Menu Footer-->
         <li class="user-footer">
             <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="my.php" class="btn btn-default btn-flat">设置</a>
             </div>
             <div class="pull-right">
                 <a href="logout.php?action=logout" class="btn btn-default btn-flat">退出</a>
