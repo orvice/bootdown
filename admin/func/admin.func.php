@@ -36,3 +36,16 @@ function get_admin_pwd($id){
         return $rs['admin_pwd'];
     }
 }
+
+//根据ID获取email
+function get_admin_email($id){
+    global $dbc;
+    $sql = "SELECT * FROM `bd_admin` WHERE admin_id = '$id' ";
+    $query = $dbc->query($sql);
+    if(!$query){
+        return 0;
+    }else{
+        $rs = $query->fetch_array();
+        return $rs['admin_email'];
+    }
+}
