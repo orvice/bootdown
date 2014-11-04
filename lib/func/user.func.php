@@ -54,6 +54,22 @@ function get_user_name($uid){
     }
 }
 
+//根据UID返回email
+function get_user_email($uid){
+    global $dbc;
+    $sql = "SELECT * FROM bd_user WHERE uid='$uid'  limit 1";
+    $query = $dbc->query($sql);
+    if(!$query){
+        //无此用户返回0
+        return 0;
+    }else{
+        //返回UID
+        $rs = $query->fetch_array();
+        $email = $rs['user_email'];
+        return $email;
+    }
+}
+
 //写用户到数据库函数，成功返回true
 function reg_to_db($user_name,$user_pwd,$user_email){
     $reg_sql = "INSERT INTO `bd_user` ( `user_name`, `user_pwd`, `user_email`)
