@@ -37,32 +37,84 @@ if(!empty($_POST)){
         <h1>注册</h1>
     </div>
 
-    <form class="form-signin" role="form" action="register.php" method="post">
+    <form class="form-signin" name="reg" role="form" action="doreg.php" method="post" onsubmit="return regcheck()">
 
         <div class="form-group">
             <label>用户名</label>
-            <input type="username"  name="username" class="form-control" placeholder="用户名" required autofocus>
+            <input type="username"  name="username" class="form-control" placeholder="用户名"   autofocus>
         </div>
 
         <div class="form-group">
             <label>密码</label>
-            <input type="password"  name="password" class="form-control" placeholder="密码" required>
+            <input type="password"  name="password" class="form-control" placeholder="密码"  >
         </div>
 
         <div class="form-group">
             <label>重复密码</label>
-            <input type="password"  name="password" class="form-control" placeholder="重复密码" required>
+            <input type="password"  name="repassword" class="form-control" placeholder="重复密码"  >
         </div>
 
         <div class="form-group">
             <label>邮箱</label>
-            <input type="email"  name="email" class="form-control" placeholder="邮箱" required>
+            <input type="email"  name="email" class="form-control" placeholder="邮箱"  >
         </div>
 
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">提交注册</button>
     </form>
 </div><!-- /.container -->
+
+<script LANGUAGE="javascript">
+
+    function regcheck()
+    {
+        if(document.reg.username.value.length==0){
+            alert("请输入用户名");
+            document.reg.username.focus();
+            return false;
+        }
+
+        if(document.reg.username.value.length < 6){
+            alert("用户名长度至少6位");
+            document.reg.username.focus();
+            return false;
+        }
+
+        if(document.reg.password.value.length==0){
+            alert("请输入密码!");
+            document.reg.password.focus();
+            return false;
+        }
+
+        if(document.reg.password.value.length < 8){
+            alert("密码长度至少8位!");
+            document.reg.password.focus();
+            return false;
+        }
+
+        if(document.reg.repassword.value.length==0){
+            alert("请重复输入密码!");
+            document.reg.repassword.focus();
+            return false;
+        }
+
+        if(document.reg.repassword.value.length != document.reg.password.value.length ){
+            alert("两次密码输入不符!");
+            document.reg.repassword.focus();
+            return false;
+        }
+
+
+        if(document.reg.email.value.length==0){
+            alert("请输入邮箱!");
+            document.reg.email.focus();
+            return false;
+        }
+
+
+    }
+
+</script>
 
 <?php include_once 'lib/footer.inc.php';?>
 </body>
