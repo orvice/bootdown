@@ -54,11 +54,29 @@ function get_user_name($uid){
     }
 }
 
+//根据UID返回email
+function get_user_email($uid){
+    global $dbc;
+    $sql = "SELECT * FROM bd_user WHERE uid='$uid'  limit 1";
+    $query = $dbc->query($sql);
+    if(!$query){
+        //无此用户返回0
+        return 0;
+    }else{
+        //返回UID
+        $rs = $query->fetch_array();
+        $email = $rs['user_email'];
+        return $email;
+    }
+}
+
 //写用户到数据库函数，成功返回true
+//此函数仅写入基本信息，不保护微博等信息，微博等信息写入值0
 function reg_to_db($user_name,$user_pwd,$user_email){
-    $reg_sql = "INSERT INTO `bd_user` ( `user_name`, `user_pwd`, `user_email`)
-                VALUES ( '$user_name', '$user_pwd', '$user_email')";
-    $query = mysql_query($reg_sql);
+    global $dbc;
+    $reg_sql = "INSERT INTO  `bd_user` (`uid`, `user_name`, `user_pwd`, `user_email`, `weibo_uid`, `weibo_token`)
+                VALUES (NULL, '$user_name', '$user_pwd', '$user_email', '0', '0') ";
+    $query = $dbc->query($reg_sql);
     if ($query){
         return true;
     }
@@ -70,8 +88,9 @@ function reg_to_db($user_name,$user_pwd,$user_email){
 
 //更改密码
 function change_pwd($uid,$new_pwd){
+    global $dbc;
     $change_pwd_sql = "UPDATE `bd_user` SET user_pwd = '$new_pwd' WHERE uid ='$uid' ";
-    $query = mysql_query($change_pwd_sql);
+    $query = $dbc->query($change_pwd_sql);
     if ($query){
         return true;
     }
