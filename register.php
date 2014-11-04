@@ -56,7 +56,7 @@ if(!empty($_POST)){
 
         <div class="form-group">
             <label>邮箱</label>
-            <input type="email"  name="email" class="form-control" placeholder="邮箱"  >
+            <input    name="email" class="form-control" placeholder="邮箱"  >
         </div>
 
 
@@ -107,6 +107,19 @@ if(!empty($_POST)){
 
         if(document.reg.email.value.length==0){
             alert("请输入邮箱!");
+            document.reg.email.focus();
+            return false;
+        }
+
+        //var temp = document.getElementById("text1");
+        //var email = document.getElementById("email");
+
+        //对电子邮件的验证
+
+        var email_reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+
+        if(!email_reg.test(document.reg.email.value)) {
+            alert('提示\n\n请输入有效的E-mail！');
             document.reg.email.focus();
             return false;
         }
