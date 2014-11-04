@@ -5,7 +5,6 @@ include_once( 'lib/sina_weibo/config.php' );
 include_once( 'lib/sina_weibo/saetv2.ex.class.php' );
 
 $o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
-$weibo_callback_url = "http://lo.zfacg.com:93/bootdown/weibo_login.php";
 $code_url = $o->getAuthorizeURL( $weibo_callback_url );
 ?>
 <!DOCTYPE html>
