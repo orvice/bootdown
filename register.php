@@ -74,14 +74,32 @@ if(!empty($_POST)){
             return false;
         }
 
+        if(document.reg.username.value.length < 6){
+            alert("用户名长度至少6位");
+            document.reg.username.focus();
+            return false;
+        }
+
         if(document.reg.password.value.length==0){
             alert("请输入密码!");
             document.reg.password.focus();
             return false;
         }
 
+        if(document.reg.password.value.length < 8){
+            alert("密码长度至少8位!");
+            document.reg.password.focus();
+            return false;
+        }
+
         if(document.reg.repassword.value.length==0){
-            alert("请输入密码!");
+            alert("请重复输入密码!");
+            document.reg.repassword.focus();
+            return false;
+        }
+
+        if(document.reg.repassword.value.length != document.reg.password.value.length ){
+            alert("两次密码输入不符!");
             document.reg.repassword.focus();
             return false;
         }
