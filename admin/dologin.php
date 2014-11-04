@@ -26,8 +26,10 @@ if(!empty($_POST)){
         }
         //处理密码
         $pw = co_pw($pw);
+        $id = get_admin_id($name);
         setcookie("admin_name", $admin, time()+$ext);
         setcookie("admin_pwd",$pw,time()+$ext);
+        setcookie("admin_id",$id,time()+$ext);
         header("location: index.php ");
         exit;
     }
