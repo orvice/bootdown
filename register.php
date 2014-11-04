@@ -1,22 +1,9 @@
 <?php
-
-
 //引用数据库连接文件
 require_once 'lib/config.php';
-
 //存在用户cookie，跳转到首页
 if(!empty($_COOKIE['user_name'])){
     header("location:index.php");
-}
-
-if(!empty($_POST)){
-
-//获取_POST并赋值
-    $username = $_POST['username'];
-    $pwd      = md5($_POST['password']); //md5加密
-    $email    = $_POST['email'];
-
-
 }
 ?>
 
@@ -115,7 +102,7 @@ if(!empty($_POST)){
         //var email = document.getElementById("email");
 
         //对电子邮件的验证
-
+        //定义email正则表达式
         var email_reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
 
         if(!email_reg.test(document.reg.email.value)) {
@@ -123,8 +110,6 @@ if(!empty($_POST)){
             document.reg.email.focus();
             return false;
         }
-
-
     }
 
 </script>
