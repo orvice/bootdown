@@ -110,6 +110,14 @@ if(!empty($_COOKIE['user_name'])){
             document.reg.email.focus();
             return false;
         }
+
+        // 特殊字符检验
+        var no_allow_txt = new RegExp("[\\*,\\&,\\\\,\\/,\\?,\\|,\\:,\\<,\\>,\"]");
+        if(no_allow_txt.test(document.reg.username.value)){
+            alert("用户名不允许含特殊字符");
+            document.reg.username.focus();
+            return false;
+        }
     }
 
 </script>
