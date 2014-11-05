@@ -11,7 +11,7 @@ function user_login_check($user,$pwd){
         return 0;
     }else{
         $rs = $query->fetch_array();
-        if($rs['pwd'==$pwd]){
+        if($rs['user_pwd']==$pwd){
             //密码正确返回1
             return 1;
         }else{
