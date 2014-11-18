@@ -38,6 +38,22 @@ function get_user_uid($username){
     }
 }
 
+//邮箱检测
+function is_email_ok($email){
+    global $dbc;
+    $sql = "SELECT * FROM bd_user WHERE user_email='$email'  limit 1";
+    $query = $dbc->query($sql);
+    if(!$query){
+        //无此用户返回0
+        return 0;
+    }else{
+        //返回UID
+        $rs = $query->fetch_array();
+        $uid = $rs['uid'];
+        return $uid;
+    }
+}
+
 //根据UID返回username
 function get_user_name($uid){
     global $dbc;
