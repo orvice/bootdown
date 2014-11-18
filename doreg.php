@@ -1,6 +1,8 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 //引用数据库连接文件
 require_once 'lib/config.php';
+require_once 'lib/func/user.func.php';
 require_once 'lib/func/reg.func.php';
 
 //非法访问控制
@@ -15,12 +17,12 @@ if(empty($_POST)){
     //判断用户名是否可用
     if(get_user_uid($username)!=0){
         echo ' <script>alert("用户名已经被使用!")</script> ';
-        echo " <script>window.location='reg.php';</script> " ;
+        echo " <script>window.location='register.php';</script> " ;
     }
 
     //判断邮箱是否存在
     if(is_email_ok($email)!=0){
         echo ' <script>alert("邮箱已经被使用!")</script> ';
-        echo " <script>window.location='reg.php';</script> " ;
+        echo " <script>window.location='register.php';</script> " ;
     }
 }
