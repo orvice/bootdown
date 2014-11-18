@@ -1,7 +1,7 @@
 <?php
 //引用数据库连接文件
 require_once 'lib/config.php';
-require_once 'lib/reg.func.php';
+require_once 'lib/func/reg.func.php';
 
 //非法访问控制
 if(empty($_POST)){
