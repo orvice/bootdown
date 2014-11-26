@@ -36,7 +36,7 @@ $code_url = $o->getAuthorizeURL( $weibo_callback_url );
     <form role="form" name="login" action="dologin.php" method="post" onsubmit="return logincheck()">
         <div class="body bg-gray">
             <div class="form-group">
-                <input type="username"  name="username" class="form-control" placeholder="Username" required autofocus>
+                <input type="text"  name="username" class="form-control" placeholder="Username" required autofocus>
             </div>
             <div class="form-group">
                 <input type="password"  name="password" class="form-control" placeholder="Password" >

@@ -24,7 +24,7 @@
                 <?php
                 //未登录显示登录注册
                 if(empty($_COOKIE[user_name])) {    ?>
-                <li><a href="/<?php echo BD_PATH; ?>register.php">注册</a></li>
+                <li><a href="/<?php echo BD_PATH; ?>reg.php">注册</a></li>
                 <li><a href="/<?php echo BD_PATH; ?>login.php">登录</a></li>
                 <?php } ?>
 
