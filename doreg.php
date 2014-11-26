@@ -10,6 +10,7 @@ $username = mysqli_real_escape_string($dbc,trim($_POST['username']));
 $pwd      = mysqli_real_escape_string($dbc,trim($_POST['password']));
 $pwd      = md5($pwd);
 $email    = mysqli_real_escape_string($dbc,trim($_POST['email']));
+$email    = strtolower($email);
 
 switch(empty($_POST)){
     case !get_user_uid($username):{
@@ -26,5 +27,12 @@ switch(empty($_POST)){
 
     default:{
         echo "ok";
+        if(user_reg($username,$pwd,$email)){
+            echo ' <script>alert("注册成功，请登录!")</script> ';
+            echo " <script>window.location='login.php';</script> " ;
+        }else{
+            echo ' <script>alert("未知错误!")</script> ';
+            echo " <script>window.location='reg.php';</script> " ;
+        }
     }
 }
