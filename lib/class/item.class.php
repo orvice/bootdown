@@ -9,16 +9,19 @@
 class item {
 
     public $item_id;
+    private $dbc;
 
     function  __construct($id){
+        global $dbc;
         $this->item_id = $id;
+        $this->dbc = $dbc;
     }
 
     //获取count
     function get_item_count(){
         $sql = "SELECT * FROM `bd_item` WHERE `item_id`= '$this->item_id'  ";
-        $query = mysql_query($sql);
-        $rs=mysql_fetch_array($query);
+        $query = $this->dbc->query($sql);
+        $rs=$query->fetch_all();
         if($rs){
             $count = $rs['item_count'];
             return  $count;
@@ -34,7 +37,7 @@ class item {
         $count = $this->get_item_count();
         $count++;
         $sql   = "UPDATE `bd_item` SET `item_count`='$count' WHERE `item_id`='$this->item_id'";
-        $query = mysql_query($sql);
+        $query = $this->dbc->query($sql);
 
     }
 
