@@ -12,11 +12,11 @@ $rs       = $query->fetch_array();
             <p>大小:<?php echo $rs['item_size'];?></p>
             <p>最后更新:<?php echo $rs['item_date'];?></p>
             <p>浏览次数:<?php echo $rs['item_count'];?></p>
-            <p>下载:</br><a href="<?php echo $rs['item_url'];?>" class="btn btn-info">点击下载</a></p>
+            <p>下载: <a href="<?php echo $rs['item_url'];?>"  >点击下载</a></p>
             <p>详情:</br><?php echo $rs['item_text'];?></p>
 
             <div id="social_comment" >
-               <?php include_once 'lib/comment.php'; ?>
+               <?php include_once 'lib/social_comment.php'; ?>
             </div>
 
         </div>
